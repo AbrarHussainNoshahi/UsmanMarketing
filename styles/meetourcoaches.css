@@ -1,0 +1,259 @@
+.coaches-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.section-title-1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: #fff;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    
+}
+
+.coaches-carousel {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    margin-top: 2rem;
+}
+
+.coach-card {
+    position: absolute;
+    width: min(280px, 90vw);
+    height: 380px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 
+                0 0 0 1px rgba(242, 194, 56, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.coach-card.active {
+    z-index: 3;
+    transform: scale(1.05);
+}
+
+.coach-card.active::before {
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+.coach-card.left,
+.coach-card.right {
+    opacity: 0.7;
+    filter: brightness(0.7);
+    transform: scale(0.8);
+}
+
+.coach-card.left {
+    transform: translateX(-220px) scale(0.8);
+}
+
+.coach-card.right {
+    transform: translateX(220px) scale(0.8);
+}
+
+.coach-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid;
+    margin-bottom: 20px;
+    background-color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5),
+                0 0 0 4px rgba(242, 194, 56, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.coach-card.active .coach-image {
+    transform: scale(1.05);
+}
+
+.coach-info {
+    text-align: center;
+    width: 100%;
+}
+
+.coach-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+}
+
+.coach-role {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.coach-bio {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: center;
+}
+
+.coach-bio::-webkit-scrollbar {
+    width: 5px;
+}
+
+.coach-bio::-webkit-scrollbar-track {
+    background: var(--dark);
+    border-radius: 10px;
+}
+
+.coach-bio::-webkit-scrollbar-thumb {
+    background: var(--bronze);
+    border-radius: 10px;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(15, 15, 15, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 4;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),
+               0 0 0 1px rgba(242, 194, 56, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.nav-btn::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-btn:hover::after {
+    opacity: 1;
+}
+
+.nav-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn:focus {
+    outline: none;
+}
+
+.prev-btn {
+    left: 5%;
+}
+
+.next-btn {
+    right: 5%;
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.arrow-left {
+    transform: rotate(-135deg);
+}
+
+.arrow-right {
+    transform: rotate(45deg);
+}
+
+.nav-btn:hover .arrow {
+    border-color: var(--darker);
+    transform: rotate(-135deg) scale(1.2);
+}
+
+.nav-btn:hover .arrow-right {
+    transform: rotate(45deg) scale(1.2);
+}
+
+.coach-indicator {
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.indicator-dot:hover {
+    transform: scale(1.2);
+}
+
+.indicator-dot.active {
+    background: var(--gradient-primary);
+    box-shadow: 0 0 10px rgba(242, 194, 56, 0.5);
+}
+
+.glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(242, 194, 56, 0.2) 0%, rgba(168, 135, 23, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(30px);
+}
+
+/* 
+wedesday 5 pm
+*/

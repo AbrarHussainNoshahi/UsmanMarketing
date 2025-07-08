@@ -1,0 +1,85 @@
+.student-counter {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark);
+    color: white;
+    padding: clamp(8px, 2vw, 15px) clamp(10px, 3vw, 20px);
+    border-radius: 6px;
+    max-width: 100%;
+    width: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-images {
+    display: flex;
+    margin-right: clamp(8px, 2vw, 14px);
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: clamp(24px, 5vw, 32px);
+    height: clamp(24px, 5vw, 32px);
+    border-radius: 50%;
+    border: 2px solid var(--dark);
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image:not(:first-child) {
+    margin-left: -12px;
+}
+
+.profile-image:nth-child(1) {
+    border: 2px solid var(--gold);
+    z-index: 3;
+}
+
+.profile-image:nth-child(2) {
+    border: 2px solid var(--bronze);
+    z-index: 2;
+}
+
+.profile-image:nth-child(3) {
+    border: 2px solid var(--dark);
+    z-index: 1;
+}
+
+.counter-text {
+    font-size: clamp(14px, 3vw, 18px);
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.counter-number {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.counter-description {
+    color: #ffffff;
+}
+
+/* For very small screens */
+@media (max-width: 340px) {
+    .student-counter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile-images {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .counter-text {
+        white-space: normal;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--darker);
+    }
+}

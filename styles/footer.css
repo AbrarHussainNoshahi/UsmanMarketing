@@ -1,0 +1,408 @@
+.footer {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 2rem;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border-light);
+    padding-bottom: 8rem;
+  }
+  
+  
+  .footer-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: var(--canva-blue);
+    opacity: 0.03;
+    filter: blur(100px);
+    z-index: 0;
+  }
+  
+  .footer-glow-left {
+    bottom: -250px;
+    left: -100px;
+  }
+  
+  .footer-glow-right {
+    top: -250px;
+    right: -100px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .footer-col {
+    text-align: left;
+  }
+  
+  .footer-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .footer-tagline {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 400px;
+  }
+  
+  .footer-heading {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    padding-left: 15px;
+    display: inline-block;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .footer-heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient-secondary);
+    border-radius: 4px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-link-item {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-link-item:hover {
+    transform: translateX(5px);
+  }
+  
+  .footer-link-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--canva-purple);
+    border-radius: 50%;
+  }
+  
+  .footer-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: var(--canva-pink);
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .social-icon::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    padding: 1px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-3px);
+  }
+  
+  .social-icon:hover i {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .contact-info {
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: var(--bg-card);
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .contact-icon::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    padding: 1px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  .contact-icon i {
+    font-size: 12px;
+    color: var(--canva-purple);
+  }
+  
+  .contact-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+  
+  .footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+  }
+  
+  .footer-copyright {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .footer-bottom-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-bottom-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-bottom-link:hover {
+    color: var(--canva-blue);
+  }
+          /* Developer Credit Styles */
+        .developer-credit {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(126, 58, 237, 0.1);
+            border: 1px solid rgba(126, 58, 237, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .developer-credit p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .developer-link {
+            color: var(--canva-purple);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .developer-link:hover {
+            color: var(--canva-pink);
+            text-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
+        }
+
+        .developer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .developer-link:hover::after {
+            transform: scaleX(1);
+        }
+  @keyframes gradientBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 2rem;
+    }
+    
+    .footer-col:first-child {
+      grid-column: 1 / -1;
+    }
+    
+    .footer-tagline {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .footer-col {
+      text-align: center;
+    }
+    
+    .footer-tagline {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .footer-social {
+      justify-content: center;
+    }
+    
+    .footer-link-item {
+      text-align: left;
+    }
+    
+    .contact-info {
+      justify-content: flex-start;
+    }
+    
+    .footer-bottom-links {
+      gap: 1.5rem;
+    }
+  }
+
+
+/* Add this to your CSS */
+.social-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Add a subtle ripple effect */
+.social-icon:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.social-icon:active:before {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+/* Optional: For a cleaner look, make icons consistent size */
+.social-icon i {
+  font-size: 18px;
+  transition: color 0.3s;
+}

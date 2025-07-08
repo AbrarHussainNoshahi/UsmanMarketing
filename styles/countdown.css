@@ -1,0 +1,138 @@
+.sticky-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(150%); /* Initial state - hidden */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 50%; /* Desktop width */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 15px;
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  /* Improve touch behavior on mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sticky-bar.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.bar-section {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 15px);
+  flex-wrap: nowrap;
+}
+
+.icon-circle {
+  width: clamp(32px, 5vw, 40px);
+  height: clamp(32px, 5vw, 40px);
+  min-width: clamp(32px, 5vw, 40px); /* Prevent shrinking */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(16px, 2.5vw, 20px);
+}
+
+/* Title text styling */
+.title-text {
+  font-weight: bold;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Timer styling */
+.timer {
+  font-weight: bold;
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Primary responsive breakpoint */
+@media (max-width: 768px) {
+  .sticky-bar {
+    /* Keep in row layout as requested */
+    flex-direction: row; 
+    padding: 8px 24px;
+    gap: 10px;
+    width: 98%; /* Mobile width as requested */
+  }
+  
+  .bar-section {
+    justify-content: space-between;
+  }
+}
+
+/* Secondary breakpoint for smaller devices */
+@media (max-width: 480px) {
+  .bs-1{display: none;}
+  .title-text {display: none;}
+  .sticky-bar {
+    bottom: 10px;
+    gap: 8px;
+    width: 98%; /* Consistent mobile width */
+  }
+  
+  .icon-circle {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 16px;
+  }
+  
+  .title-text {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px; /* Control text overflow better */
+  }
+}
+
+/* Ultra-small screens */
+@media (max-width: 350px) {
+  .sticky-bar {
+    padding: 8px;
+    gap: 5px;
+    width: 98%;
+  }
+  
+  .bar-section {
+    gap: 6px;
+  }
+  
+  .timer, .title-text {
+    font-size: 14px;
+  }
+  
+  .icon-circle {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    font-size: 14px;
+  }
+}
+
+/* Fix for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .sticky-bar {
+    background: rgba(17, 17, 17, 0.9);
+  }
+}

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from syedsebt.com/refundpolicy.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Jul 2025 05:50:18 GMT -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usman Digital Store - Refund Policy</title>
+    <style>
+      :root {
+        --canva-purple: #8b3dff;
+        --canva-pink: #ff3e98;
+        --canva-blue: #00c4cc;
+        --gold: #f2c238;
+        --bronze: #a88717;
+        --dark: #0f0f0f;
+        --darker: #070707;
+        --gradient-primary: linear-gradient(135deg, #8b3dff 0%, #ff3e98 100%);
+        --gradient-secondary: linear-gradient(135deg, #00c4cc 0%, #8b3dff 100%);
+        --gradient-gold: linear-gradient(to top, #f2c238 2.09%, #a27a3d 86.55%);
+        --button-glow: 0 4px 50px 0 rgba(139, 61, 255, 0.4);
+        --button-glow-hover: 0 6px 20px 0 rgba(139, 61, 255, 0.6);
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+        --text-muted: rgba(255, 255, 255, 0.5);
+        --border-light: rgba(255, 255, 255, 0.1);
+        --bg-card: rgba(255, 255, 255, 0.03);
+        --bg-card-hover: rgba(255, 255, 255, 0.05);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "SF Pro Display", "Arial", sans-serif;
+      }
+
+      body {
+        background-color: var(--dark);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        position: relative;
+        display: inline-block;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--canva-blue);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 9%;
+      }
+
+      .eyebrow-container {
+        position: relative;
+        margin-bottom: 1.2rem;
+      }
+
+      .eyebrow {
+        position: relative;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: var(--gradient-gold);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        padding-bottom: 10px;
+        display: inline-block;
+        margin-bottom: 2rem;
+      }
+
+      .eyebrow::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--gradient-gold);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+
+      .eyebrow-container:hover .eyebrow::after {
+        width: 100%;
+      }
+
+      .main-headline {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-family: "SF Pro Display Bold", "Arial", sans-serif;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        max-width: 800px;
+        margin: 0 auto 2rem auto;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        animation: fadeUp 1s ease 0.2s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .policy-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-light);
+        animation: fadeIn 1s ease 0.4s forwards;
+        opacity: 0;
+      }
+
+      .policy-section:last-child {
+        border-bottom: none;
+      }
+
+      /* .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--canva-blue);
+      } */
+
+      .policy-content p {
+        margin-bottom: 1.5rem;
+        color: var(--text-secondary);
+      }
+
+      .policy-content ul,
+      .policy-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-secondary);
+      }
+
+      .policy-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      .highlight {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        background: var(--gradient-primary);
+        color: var(--text-primary);
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: var(--button-glow);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--button-glow-hover);
+      }
+
+      .feature-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        background: var(--bg-card);
+        border-radius: 8px;
+        border: 1px solid var(--border-light);
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        background: var(--bg-card-hover);
+        transform: translateY(-2px);
+      }
+
+      .feature-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.75rem;
+        color: var(--canva-purple);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .eyebrow {
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+
+        .policy-section {
+          padding: 1.5rem 0;
+        }
+
+        .feature-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="hero">
+        <div class="eyebrow-container">
+          <span class="eyebrow">Refund Policy</span>
+        </div>
+        <h1 class="main-headline">SATISFACTION GUARANTEE & REFUND POLICY</h1>
+        <p class="subtitle">
+          We're committed to delivering reliable and premium digital access at
+          unbeatable prices. Our policy ensures that your experience with Usman
+          Digital Store is fair, transparent, and risk-free.
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title">Our Service Guarantee</h2>
+        <div class="policy-content">
+          <p>
+            At Usman Digital Store, we offer secure and fast delivery of access
+            to multiple premium platforms including
+            <span class="highlight"> Canva Pro</span>,
+            <span class="highlight"> CapCut Pro</span>,
+            <span class="highlight"> Surfshark VPN</span>,
+            <span class="highlight"> VidIQ Pro</span>,
+            <span class="highlight"> Autodesk</span>, and
+            <span class="highlight"> Figma Pro</span>.
+          </p>
+          <p>
+            We guarantee access delivery within 24 hours of purchase. If we fail
+            to do so, you're eligible for a 100% refund.
+          </p>
+          <h3>Canva Pro</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Premium templates</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Brand Kit access</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Background remover</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Magic Resize tool</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>AI-powered tools</span>
+            </div>
+          </div>
+          <h3>CapCut Pro</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Pro timeline editor</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Exclusive filters and effects</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>HD export without watermark </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>AI auto-captioning and background removal </span>
+            </div>
+          </div>
+          <h3>Surfshark VPN</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Unlimited devices</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Ad-block and no-log policy </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>100+ server locations </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>High-speed and secure browsing </span>
+            </div>
+          </div>
+          <h3>VidIQ Pro</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>SEO keyword research</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>AI title and content assist</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Competitor channel insights </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Trending alerts </span>
+            </div>
+          </div>
+          <h3>Autodesk (AutoCAD, Revit etc.)</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Professional software suite access</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Cloud storage and collaboration</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Educational/Commercial license access </span>
+            </div>
+          </div>
+          <h3>Figma Pro</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Real-time design collaboration</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Unlimited version history</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Premium plugins </span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✓</span>
+              <span>Shared libraries and systems </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title">Refund Eligibility Criteria</h2>
+        <div class="policy-content">
+          <p>You may qualify for a full or partial refund if:</p>
+          <ul>
+            <li>
+              <strong>Access not delivered:</strong> within 24 hours of payment
+              confirmation
+            </li>
+            <li>
+              <strong>Technical failure:</strong> from our end preventing access
+            </li>
+            <li>
+              <strong>Account suspension:</strong> due to internal service
+              errors
+            </li>
+            <li>
+              <strong>Billing issues:</strong> such as duplicate or incorrect
+              charges
+            </li>
+          </ul>
+          <p>
+            Please note: All refunds are reviewed on a case-by-case basis to
+            prevent system misuse.
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title">How to Request a Refund</h2>
+        <div class="policy-content">
+          <p>To request a refund:</p>
+          <ol>
+            <li>
+              Email us at
+              <span class="highlight"
+                ><a href="mailto:support@usmandigitalstore.com "
+                  >support@usmandigitalstore.com
+                </a></span
+              >
+              with subject line "Refund Request"
+            </li>
+            <li>Provide your order number and payment screenshot</li>
+            <li>Share evidence of any access issues</li>
+            <li>State the reason for your refund clearly</li>
+          </ol>
+          <p>
+            Support will respond within 2-3 business days. If approved, refunds
+            are issued within 5-7 business days.
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title">Refund Time Frame</h2>
+        <div class="policy-content">
+          <p>
+            Requests must be submitted within
+            <span class="highlight"> 7 days</span> of purchase (new customers)
+            or within <span class="highlight"> 3 days</span> of renewal
+            (existing customers). Refunds outside this window are only approved
+            in special circumstances.
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title">Non-Refundable Situations</h2>
+        <div class="policy-content">
+          <p>Refunds will NOT be granted if:</p>
+          <ul>
+            <li>You accessed and used any part of the purchased service</li>
+            <li>You changed your mind after delivery</li>
+            <li>Your account was suspended for violating platform terms</li>
+            <li>You shared access credentials</li>
+            <li>You submitted a request after the deadline</li>
+            <li>You were involved in abuse, fraud, or resale attempts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="section-title">Questions & Support</h2>
+        <div class="policy-content">
+          <p>Have questions? We’re here 24/7 to assist.</p>
+           <p>
+            Email:
+          <span class="highlight"
+            ><a
+              href="mailto:contact@usmandigitalstore.com"
+              >contact@usmandigitalstore.com</a
+            ></span
+          >.
+        </p>
+        <p>
+            WhatsApp:
+          <span class="highlight"
+            ><a
+              href="https://wa.me/+923284385228"
+              >+923284385228</a
+            ></span
+          >.
+        </p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

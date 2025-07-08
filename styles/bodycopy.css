@@ -1,0 +1,29 @@
+.body-copy-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.body-copy-container h2{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.body-copy-container .copy-container{
+    width: 40%;
+    font-size: 1.3rem;
+}
+
+.body-copy-container .copy-container p{
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.body-copy-container .copy-container ol li{
+    margin-bottom: 1rem;
+}
+

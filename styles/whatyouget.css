@@ -1,0 +1,260 @@
+.container-1 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sales-card {
+    width: 100%;
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.content-area {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.benefits-list {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.feature-item-1 {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.feature-item-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.feature-item-text {
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.price-section {
+    text-align: center;
+    width: 100%;
+    margin: 30px 0 20px;
+}
+
+.price-label {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+}
+
+.price-amount {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(92.15deg, #FFEE58 2.09%, #FFB300 86.55%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.price-details {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+}
+
+.testimonial {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(15, 15, 15, 0.4);
+    border-radius: 12px;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.testimonial-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    flex-shrink: 0;
+    border: 2px solid var(--gold);
+}
+
+.testimonial-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-content {
+    flex-grow: 1;
+}
+
+.testimonial-quote {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.testimonial-result {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Super responsive adjustments */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    
+    .content-area {
+        padding: 25px 30px;
+    }
+    
+    .feature-item-text {
+        font-size: 1rem;
+    }
+    
+    .price-amount {
+        font-size: 2.2rem;
+    }
+    
+    .testimonial-img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .testimonial-quote {
+        font-size: 1rem;
+    }
+    
+    .testimonial-result {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-1 {
+        padding: 0 15px;
+    }
+    
+    .content-area {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .feature-item-1 {
+        margin-bottom: 10px;
+    }
+    
+    .feature-item-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    
+    .feature-item-text {
+        font-size: 0.85rem;
+    }
+    
+    .price-label {
+        font-size: 0.8rem;
+    }
+    
+    .price-amount {
+        font-size: 1.8rem;
+    }
+    
+    .price-details {
+        font-size: 0.75rem;
+    }
+    
+    .cta-button {
+        padding: 12px 0;
+        font-size: 0.9rem;
+    }
+    
+    .testimonial {
+        padding: 12px;
+    }
+    
+    .testimonial-img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .testimonial-quote {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-result {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-item-text {
+        font-size: 0.8rem;
+    }
+    
+    .price-amount {
+        font-size: 1.6rem;
+    }
+    
+    .testimonial-img {
+        width: 35px;
+        height: 35px;
+    }
+}

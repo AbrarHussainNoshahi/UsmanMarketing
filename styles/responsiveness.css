@@ -1,0 +1,462 @@
+@media (max-width: 1200px) {
+    .hero {
+        padding: 0 3%;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 0 1%;
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+    
+    .play-button {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .logo {
+        margin-right: auto;
+    }
+    
+    .header-button {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.7rem, 5vw, 2.5rem);
+    }
+    
+    .subtitle {
+        font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    }
+    
+    .vsl-container {
+        margin-bottom: 1.5rem;
+    }
+
+    .button-container {
+        max-width: 200px;
+    }
+
+    .alt-button {
+        padding: 14px 1.5rem;
+        font-size: 16px;
+    }
+    
+    .vsl-gradient-border {
+        padding: 3px;
+    }
+}
+
+@media (max-width: 576px) {
+    .eyebrow{
+        display: none;
+    }
+    .eyebrow::after {
+        bottom: 4px;
+        height: 2px;
+    }
+
+    .card{
+        padding: 1rem;
+    }
+
+    header .logo img{
+        width: 60px;
+    }
+
+    header .button-container{
+        display: none;
+    }
+    .content {
+        padding: 1.5rem 4%;
+    }
+    
+    header {
+        padding: 0;
+        margin-bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+    
+    .header-button {
+        margin-left: 0;
+    }
+    
+    .hero {
+        padding: 0;
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.8rem, 6vw, 2rem);
+        padding: 0 1rem;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .play-button::after {
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 22px solid var(--dark);
+    }
+
+    .button-container {
+        max-width: 100%;
+    }
+    
+    .vsl-gradient-border {
+        padding: 3px;
+        border-radius: 12px;
+    }
+    
+    .vsl-inner {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .content {
+        padding: 1rem 3%;
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.8rem, 5.5vw, 1.8rem);
+    }
+    
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .play-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .play-button::after {
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-left: 18px solid var(--dark);
+        margin-left: 4px;
+    }
+}
+
+/* Responsive Styles */
+@media (min-width: 1601px) {
+    .content {
+        max-width: 1600px;
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    .vsl-container {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .feature-box {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .body-copy-container h2 {
+        margin-bottom: 3rem;
+    }
+
+    .hero{
+        text-align: start;
+    }
+
+    .kafla-headline {
+        font-size: clamp(2.5rem, 5vw, 3rem);
+    }
+
+    .feature-box {
+      padding: 16px;
+    }
+    
+    .feature-title {
+      font-size: 14px;
+    }
+
+    .body-copy-container .copy-container {
+        width: 90%;
+    }
+  }
+
+/* PROCESS SECTION */
+
+@media (max-width: 1200px) {
+    .milestone-content {
+        max-width: 480px;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .journey-rail, .journey-progress {
+        left: 40px;
+    }
+
+    .journey-milestone {
+        flex-direction: row;
+        margin-bottom: 6rem;
+        padding: 0 0 0 100px !important;
+        justify-content: flex-start;
+    }
+
+    .milestone-marker {
+        left: 40px;
+    }
+
+    .milestone-badge {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    .milestone-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .kafla-section {
+        padding: 6rem 1.5rem;
+    }
+
+    .journey-rail, .journey-progress {
+        left: 30px;
+    }
+
+    .journey-milestone {
+        padding: 0 0 0 80px !important;
+    }
+
+    .milestone-marker {
+        left: 30px;
+    }
+
+    .milestone-badge {
+        width: 70px;
+        height: 70px;
+        font-size: 24px;
+    }
+
+    .milestone-heading {
+        font-size: 22px;
+        padding-left: 12px;
+        text-align: start;
+    }
+
+    .milestone-description {
+    font-size: 15px;
+    font-family: Inter;
+    line-height: 1;
+    }
+
+    .feature-item {
+        font-size: 15px;
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .kafla-section {
+        padding: 0rem 1rem;
+    }
+
+    .journey-rail, .journey-progress {
+        left: 25px;
+    }
+
+    .journey-milestone {
+        padding: 0 0 0 65px !important;
+        margin-bottom: 4rem;
+    }
+
+    .milestone-marker {
+        left: 25px;
+    }
+
+    .milestone-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .milestone-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .module-flex {
+        flex-direction: column-reverse;
+    }
+    
+    .module-img-container {
+        margin-bottom: 20px;
+    }
+    
+    .module-text {
+        padding-right: 0;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .coaches-carousel {
+        height: 400px;
+    }
+    
+    .coach-card.left {
+        transform: translateX(-180px) scale(0.8);
+    }
+    
+    .coach-card.right {
+        transform: translateX(180px) scale(0.8);
+    }
+    
+    .prev-btn {
+        left: 2%;
+    }
+    
+    .next-btn {
+        right: 2%;
+    }
+}
+
+@media (max-width: 768px) {
+    .coaches-carousel {
+        height: 380px;
+    }
+    
+    .coach-card {
+        width: min(260px, 80vw);
+        height: 360px;
+    }
+    
+    .coach-card.left {
+        transform: translateX(-120px) scale(0.7);
+        opacity: 0.5;
+    }
+    
+    .coach-card.right {
+        transform: translateX(120px) scale(0.7);
+        opacity: 0.5;
+    }
+    
+    .coach-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .coach-name {
+        font-size: 1.3rem;
+    }
+    
+    .coach-bio {
+        font-size: 0.85rem;
+        max-height: 130px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-heading {
+        font-size: 2.3rem;
+        text-align: center;
+    }
+
+    .body-copy-container h2{
+        font-size: 2.5rem;
+    }
+
+    .coaches-section {
+        padding: 20px 0;
+    }
+    
+    .section-title {
+        margin-bottom: 30px;
+    }
+    
+    .coaches-carousel {
+        height: 360px;
+    }
+    
+    .coach-card {
+        width: min(240px, 85vw);
+        height: 340px;
+    }
+    
+    .coach-card.left, 
+    .coach-card.right {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    
+    .coach-image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .coach-name {
+        font-size: 1.2rem;
+    }
+    
+    .coach-role {
+        font-size: 0.9rem;
+    }
+    
+    .coach-bio {
+        font-size: 0.8rem;
+        max-height: 120px;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .arrow {
+        width: 8px;
+        height: 8px;
+    }
+}

@@ -357,9 +357,9 @@ const animationConfig = {
 // ----------------- COUNTERS -----------------
 // More efficient counter with RAF batching
 const counters = {
-  contentCounter: 23546,
-  lessonsCounter: 2,
-  modulesCounter: 13532
+  contentCounter: 40500,
+  lessonsCounter: 4,
+  modulesCounter: 33532
 };
 
 function startCounters() {

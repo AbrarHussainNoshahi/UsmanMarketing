@@ -301,6 +301,7 @@
 
 .feature-text {
     color: var(--text-primary);
+    text-transform: capitalize;
 }
 
 .feature-highlight {

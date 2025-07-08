@@ -149,6 +149,9 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    svg{
+      width: 13px;
+    }
   }
   
   .social-icon::before {

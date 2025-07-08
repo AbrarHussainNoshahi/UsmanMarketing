@@ -30,6 +30,77 @@
   <link rel="stylesheet" href="styles/plans.css">
   <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
   <title>Usman Digital Store - Tools & Marketing Services</title>
+  <style>
+    .feature-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        background: var(--bg-card);
+        border-radius: 8px;
+        font-size: 10px;
+        padding: 15px 8px;
+        border: 1px solid var(--border-light);
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        background: var(--bg-card-hover);
+        transform: translateY(-2px);
+      }
+
+      .feature-icon {
+        font-size: 10px;
+        margin: 0;
+        color: var(--canva-purple);
+      }
+      .feature-icon::after{
+        content: none !important;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .eyebrow {
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+
+        .policy-section {
+          padding: 1.5rem 0;
+        }
+
+        .feature-list {
+          grid-template-columns: repeat(3);
+        }
+      }
+  </style>
 </head>
 
 <body id="content">
@@ -82,7 +153,8 @@
 
     <div class="hero">
       <div class="eyebrow fade-in">FOR EVERY CREATOR, FREELANCER & ENTREPRENEUR LOOKING TO SAVE MORE</div>
-      <h1 class="main-headline cal-sans-regular">The BEST Place To Buy <span class="highlight"> AFFORDABLE AND TRUSTED</span> DIGITAL TOOLS & SERVICES</h1>
+      <h1 class="main-headline cal-sans-regular">The BEST Place To Buy <span class="highlight"> AFFORDABLE AND
+          TRUSTED</span> DIGITAL TOOLS & SERVICES</h1>
       <p class="subtitle">🌟4.9 Rating on <span class="highlight">Trustpilot...
 
           <!-- VSL Video Player with premium border -->
@@ -752,8 +824,22 @@
               <img width="80px" src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png" alt="Logo">
             </div>
             <p class="footer-tagline">
-              Instant &#67;&#97;&#110;&#118;&#97; &#80;&#114;&#111; access. Zero hassle. Unbeatable pricing.
+              🚀 Instant Access to Canva Pro, CapCut, Figma, VidIQ, Surfshark & More – All in One Place. <br>
             </p>
+              <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon">🔐</span>
+              <span>100% Secure</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">⚡</span>
+              <span> No Hassle</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">💸</span>
+              <span>Just Unbeatable Prices</span>
+            </div>
+          </div>
             <div class="button-row">
               <!-- Neon Button -->
               <div class="button-container">
@@ -794,11 +880,13 @@
             </div>
 
             <div class="footer-social">
-              <a href="https://www.facebook.com/share/16ZxETiXXd/" class="social-icon"><i
+              <a href="https://web.facebook.com/usmandigitalstore/" class="social-icon"><i
                   class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/syedsebt?igsh=dHJ4M3Fzamk2ajdz" class="social-icon"><i
+              <a href="https://www.instagram.com/usmandigitalstore1/" class="social-icon"><i
                   class="fab fa-instagram"></i></a>
-
+              <a href="https://x.com/usmandigitlstor" class="social-icon">
+                <i class="fas fa-times"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -858,7 +946,7 @@
         },
       });
       const swiper2 = new Swiper(".testimonial_swiper", {
-        effect: "slide", 
+        effect: "slide",
 
         spaceBetween: 10,
         autoplay: {

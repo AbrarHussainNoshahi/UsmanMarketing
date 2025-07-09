@@ -8,6 +8,7 @@
     content="index, follow, Usman Digital Store, &#99;&#97;&#110;&#118;&#97; pro free, &#99;&#97;&#110;&#118;&#97; premium tool, &#99;&#97;&#110;&#118;&#97; pro free trial">
   <link rel="shortcut icon" href="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png"
     type="image/x-icon">
+  <link rel="stylesheet" href="./styles/navbar.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/premiumbackground.css">
   <link rel="stylesheet" href="styles/header.css">
@@ -30,6 +31,78 @@
   <link rel="stylesheet" href="styles/plans.css">
   <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
   <title>Usman Digital Store - Tools & Marketing Services</title>
+  <style>
+    .footer-col .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .footer-col .feature-item {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      background: var(--bg-card);
+      border-radius: 8px;
+      font-size: 10px;
+      padding: 15px 8px;
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+    }
+
+    .footer-col .feature-item:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .footer-col .feature-icon {
+      font-size: 10px;
+      margin: 0;
+      color: var(--canva-purple);
+    }
+
+    .footer-col .feature-icon::after {
+      content: none !important;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .policy-section {
+        padding: 1.5rem 0;
+      }
+
+      .feature-list {
+        grid-template-columns: repeat(3);
+      }
+    }
+  </style>
 </head>
 
 <body id="content">
@@ -67,7 +140,24 @@
   <div class="content">
     <header>
       <div class="logo"><img width="70px" src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png"></div>
+      <div class="navbar-container">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
+        <nav class="navbar" id="navbar">
+          <ul class="nav-links">
+            <li><a href="./index.html">Canva Pro</a></li>
+            <li><a href="./surfshark.html">Surfshark</a></li>
+            <li><a href="./vidIQ.html">VidIQ</a></li>
+            <li><a href="./skillshare.html">SkillShare</a></li>
+            <li><a href="./capcut.html">CapCut Pro</a></li>
+            <li><a href="./chatgpt.html">ChatGPT Plus</a></li>
+          </ul>
+        </nav>
+      </div>
       <div class="button-row">
         <!-- Neon Button -->
         <div class="button-container">
@@ -81,8 +171,10 @@
     </header>
 
     <div class="hero">
-      <div class="eyebrow fade-in">FOR EVERY CREATOR, FREELANCER & ENTREPRENEUR LOOKING TO SAVE MORE</div>
-      <h1 class="main-headline cal-sans-regular">The BEST Place To Buy <span class="highlight"> AFFORDABLE AND TRUSTED</span> DIGITAL TOOLS & SERVICES</h1>
+      <div class="eyebrow fade-in">FOR EVERY PRIVACY-CONSCIOUS USER AND STREAMING ENTHUSIAST LOOKING TO STAY SAFE ONLINE
+      </div>
+      <h1 class="main-headline cal-sans-regular">The BEST Place To Buy <span class="highlight"> AFFORDABLE AND SECURE
+        </span> <br> VPN SUBSCRIPTIONS</h1>
       <p class="subtitle">🌟4.9 Rating on <span class="highlight">Trustpilot...
 
           <!-- VSL Video Player with premium border -->
@@ -112,7 +204,7 @@
 
               </div>
               <div class="text-container">
-                <div class="feature-tag">INSTANT ACCESS</div>
+                <div class="feature-tag">INSTANT ACTIVATION</div>
                 <div class="feature-title">Setup In Minutes</div>
               </div>
             </div>
@@ -122,7 +214,7 @@
                 <img src="imgs/hammer%20and%20wrench.png" width="50px">
               </div>
               <div class="text-container">
-                <div class="feature-tag">100% &#67;&#65;&#78;&#86;&#65; PRO</div>
+                <div class="feature-tag">PREMIUM VPN ACCESS</div>
                 <div class="feature-title">All Features Unlocked</div>
               </div>
             </div>
@@ -136,8 +228,8 @@
                 </svg>
               </div>
               <div class="text-container">
-                <div class="feature-tag">REAL SUPPORT</div>
-                <div class="feature-title">Always Here 24/7</div>
+                <div class="feature-tag"> 24/7 SUPPORT</div>
+                <div class="feature-title">We're Always Here</div>
               </div>
             </div>
           </div>
@@ -166,8 +258,9 @@
           <h2 class="kafla-headline">How Does <span class="highlight playfair-display">Usman Digital Store Work</span>?
           </h2>
 
-          <p class="kafla-tagline">We make it simple and secure to get &#67;&#97;&#110;&#118;&#97; &#80;&#114;&#111;
-            without group buys or complicated setups:</p>
+          <p class="kafla-tagline">We make it simple and secure to get Surfshark VPN without confusing setups or risky
+            group sharing:
+          </p>
 
           <div class="journey-container">
             <!-- Vertical Timeline Elements -->
@@ -181,10 +274,11 @@
               </div>
               <div class="milestone-content">
                 <h3 class="milestone-heading">Choose Your Plan</h3>
-                <p class="milestone-description">Browse our available &#67;&#97;&#110;&#118;&#97; &#80;&#114;&#111;
-                  plans and pick the one that fits your needs.</p>
-                <p class="milestone-description">Whether you're a solo creator, student, or business owner - we've got
-                  options for everyone. Once you're ready, complete your payment through our secure checkout.</p>
+                <p class="milestone-description">Browse our available Surfshark VPN plans and pick the one that fits
+                  your needs.</p>
+                <p class="milestone-description">Whether you want a short-term shared plan or a private premium account,
+                  we've got secure options for everyone. Once you’re ready, complete your payment via our fast checkout.
+                </p>
               </div>
             </div>
 
@@ -195,10 +289,11 @@
               </div>
               <div class="milestone-content">
                 <h3 class="milestone-heading">We Set It Up</h3>
-                <p class="milestone-description">After your order, we immediately begin the setup process. You'll either
-                  receive an invitation to a &#67;&#97;&#110;&#118;&#97; &#80;&#114;&#111; team or have your account
-                  upgraded depending on the method you've selected.</p>
-                <p class="milestone-description">Either way, no tech skills or software downloads needed.</p>
+                <p class="milestone-description">After your order, we immediately begin the VPN setup process. You'll
+                  either receive login credentials for a shared account or have your private Surfshark account activated
+                  using your own email address.</p>
+                <p class="milestone-description">No extra steps, no software installations — just fast, smooth, secure
+                  access delivered directly.</p>
               </div>
             </div>
 
@@ -209,31 +304,31 @@
               </div>
               <div class="milestone-content">
                 <h3 class="milestone-heading">GEt ACCESS</h3>
-                <p class="milestone-description">Once activated, you'll enjoy 100% &#67;&#97;&#110;&#118;&#97;
-                  &#80;&#114;&#111; access:</p>
+                <p class="milestone-description">Once activated, you'll enjoy full access to Surfshark Premium VPN
+                  features:</p>
                 <ul class="milestone-features">
                   <li class="feature-item">
                     <span class="feature-check">✓</span>
-                    <span class="feature-text">Premium templates</span>
+                    <span class="feature-text">Unlimited bandwidth</span>
                   </li>
                   <li class="feature-item">
                     <span class="feature-check">✓</span>
-                    <span class="feature-text">Brand Kit</span>
+                    <span class="feature-text">Global server access</span>
                   </li>
                   <li class="feature-item">
                     <span class="feature-check">✓</span>
-                    <span class="feature-text">Background remover</span>
+                    <span class="feature-text">Fast streaming & torrent support</span>
                   </li>
                   <li class="feature-item">
                     <span class="feature-check">✓</span>
-                    <span class="feature-text">Magic Resize</span>
+                    <span class="feature-text">Secure encryption & no-logs policy</span>
                   </li>
                   <li class="feature-item">
                     <span class="feature-check">✓</span>
-                    <span class="feature-text">AI tools & more</span>
+                    <span class="feature-text">Works on Android, iOS, Windows, macOS & more</span>
                   </li>
                 </ul>
-                <p class="milestone-description">You can start creating instantly — just log in and go.</p>
+                <p class="milestone-description">You can start browsing securely right away — just log in and go.</p>
               </div>
             </div>
 
@@ -292,49 +387,54 @@
     <div class="section-divider"></div>
 
 
-    <div class="plans-container" id="plans">
+    <div class="plans-container" id="pricing">
       <div class="header">
-        <h1>Design Tool Access Plans</h1>
-        <p>Affordable design plans crafted for freelancers, teams, and creators who want pro-level features at unmatched
-          value.</p>
+        <h1>Surfshark VPN Access Plans</h1>
+        <p>Affordable VPN plans crafted for privacy lovers, streamers, and professionals who want complete digital
+          freedom at unmatched value.</p>
       </div>
 
       <div class="plans-grid">
         <!-- &#67;&#97;&#110;&#118;&#97; Pro -->
         <div class="plan-card starter">
           <div class="plan-header">
-            <h3 class="plan-name">&#67;&#97;&#110;&#118;&#97; &#80;&#114;&#111;</h3>
-            <p class="plan-description">Essentials for light users & quick projects</p>
+            <h3 class="plan-name">Surfshark Lite Plan</h3>
+            <p class="plan-description">Essentials for light users & short-term privacy</p>
           </div>
 
           <div class="plan-price">
-            <div class="price-amount">Rs 199</div>
+            <div class="price-amount">Rs 300</div>
             <div class="price-period">One-time</div>
-            <div class="savings-badge">Best for Trial Users</div>
+            <div class="savings-badge">BEST FOR STARTERS</div>
           </div>
 
           <div class="features-list">
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div class="feature-text">All premium tools</div>
+              <div class="feature-text">Valid for 2 Months</div>
             </div>
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div class="feature-text">No warranty or support</div>
+              <div class="feature-text">Access on 1 device only</div>
             </div>
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div class="feature-text">Good for testing or quick use</div>
+              <div class="feature-text">Replacement guarantee included</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon feature-icon-close"></div>
+              <div class="feature-text">No device switching allowed</div>
             </div>
           </div>
 
           <form method="POST" action="https://syedsebt.com/payfast.php">
             <input type="hidden" name="plan" value="Canva Pro">
             <input type="hidden" name="amount" value="199">
-            <button class="cta-button starter" type="submit">Get Canva Pro</button>
+            <button class="cta-button starter" type="submit">GET LITE PLAN</button>
           </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
+
               <div class="swiper-slide">
                 <div class="testimonial">
                   <div class="testimonial-avatar">
@@ -342,63 +442,51 @@
                   </div>
                   <div class="testimonial-content">
                     <div class="testimonial-name">Ali</div>
-                    <div class="testimonial-text">"Needed it for a quick design job and it worked perfectly for the
-                      price!"
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="testimonial">
-                  <div class="testimonial-avatar">
-                    <img src="imgs/4e8f40efdce77bd0870bba5fc7f4e6e8.jpg" alt="User">
-                  </div>
-                  <div class="testimonial-content">
-                    <div class="testimonial-name">Ali</div>
-                    <div class="testimonial-text">"Needed it for a quick design job and it worked perfectly for the
-                      price!"
+                    <div class="testimonial-text">"Perfect for testing or when you need secure browsing on one phone!"
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
 
         </div>
 
-        <!-- &#67;&#97;&#110;&#118;&#97; Pro Quality Account -->
         <div class="plan-card pro featured">
           <div class="plan-header">
-            <h3 class="plan-name">&#67;&#97;&#110;&#118;&#97; Quality Account</h3>
-            <p class="plan-description">Reliable account for consistent monthly use</p>
+            <h3 class="plan-name">Surfshark Plus Plan</h3>
+            <p class="plan-description">Reliable and cost-effective long-term protection</p>
           </div>
 
           <div class="plan-price">
-            <div class="price-amount">Rs 499</div>
-            <div class="price-period">per month</div>
-            <div class="savings-badge">Best for Serious Creators</div>
+            <div class="price-amount">Rs 700</div>
+            <div class="price-period">One-time</div>
+            <div class="savings-badge">BEST FOR LONG-TERM USERS</div>
           </div>
 
           <div class="features-list">
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div class="feature-text">Full premium features</div>
+              <div class="feature-text">Valid for 6 Months</div>
             </div>
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div class="feature-text">Great uptime & usability</div>
+              <div class="feature-text">1 device access only</div>
             </div>
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div class="feature-text">Affordable monthly option</div>
+              <div class="feature-text">Replacement guarantee</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon feature-icon-close"></div>
+              <div class="feature-text">No switching between devices</div>
             </div>
           </div>
 
           <form method="POST" action="https://syedsebt.com/payfast.php">
             <input type="hidden" name="plan" value="Canva Monthly Pro">
             <input type="hidden" name="amount" value="499">
-            <button class="cta-button pro" type="submit">Get Monthly Pro</button>
+            <button class="cta-button pro" type="submit">GET 6 MONTHS PLAN</button>
           </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
@@ -409,12 +497,55 @@
                   </div>
                   <div class="testimonial-content">
                     <div class="testimonial-name">Ali</div>
-                    <div class="testimonial-text">"Needed it for a quick design job and it worked perfectly for the
-                      price!"
+                    <div class="testimonial-text">"Super stable, I’ve been using this plan on my laptop for months!""
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="plan-card team">
+          <div class="plan-header">
+            <h3 class="plan-name">Surfshark Premium Plan</h3>
+            <p class="plan-description">Full control & access across all devices</p>
+          </div>
+
+          <div class="plan-price">
+            <div class="price-amount">Rs 1500</div>
+            <div class="price-period">One-time</div>
+            <div class="savings-badge">MOST FLEXIBLE OPTION</div>
+          </div>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-icon"></div>
+              <div class="feature-text">Valid for 2 Months</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"></div>
+              <div class="feature-text">Private Account using your email</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"></div>
+              <div class="feature-text">Use on unlimited devices</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"></div>
+              <div class="feature-text">100% control + premium support</div>
+            </div>
+          </div>
+
+          <form method="POST" action="https://syedsebt.com/payfast.php">
+            <input type="hidden" name="plan" value="Canva PLP">
+            <input type="hidden" name="amount" value="999">
+            <button class="cta-button team" type="submit">GET PREMIUM ACCESS</button>
+          </form>
+          <div class="swiper testimonial_swiper">
+            <div class="swiper-wrapper" id="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="testimonial">
                   <div class="testimonial-avatar">
@@ -422,76 +553,9 @@
                   </div>
                   <div class="testimonial-content">
                     <div class="testimonial-name">Hassan</div>
-                    <div class="testimonial-text">"Been using it for all my social media clients—absolutely worth it!"
+                    <div class="testimonial-text">"Loved having my own account! Works on mobile, TV, and my PC all at
+                      once."
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-
-        </div>
-
-        <!-- &#67;&#97;&#110;&#118;&#97; Pro PLP -->
-        <div class="plan-card team">
-          <div class="plan-header">
-            <h3 class="plan-name">&#67;&#97;&#110;&#118;&#97; &#80;&#114;&#111; PLP</h3>
-            <p class="plan-description">Long-term peace of mind for heavy users</p>
-          </div>
-
-          <div class="plan-price">
-            <div class="price-amount">Rs 999</div>
-            <div class="price-period">One-time</div>
-            <div class="savings-badge">Never Closes Guarantee</div>
-          </div>
-
-          <div class="features-list">
-            <div class="feature-item">
-              <div class="feature-icon"></div>
-              <div class="feature-text">Lifetime access</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"></div>
-              <div class="feature-text">Never Closes (PLP)</div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"></div>
-              <div class="feature-text">Ideal for designers, teams & marketers</div>
-            </div>
-          </div>
-
-          <form method="POST" action="https://syedsebt.com/payfast.php">
-            <input type="hidden" name="plan" value="Canva PLP">
-            <input type="hidden" name="amount" value="999">
-            <button class="cta-button team" type="submit">Get PLP Access</button>
-          </form>
-          <div class="swiper testimonial_swiper">
-            <div class="swiper-wrapper" id="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="testimonial">
-                  <div class="testimonial-avatar">
-                    <img src="imgs/4e8f40efdce77bd0870bba5fc7f4e6e8.jpg" alt="User">
-                  </div>
-                  <div class="testimonial-content">
-                    <div class="testimonial-name">Ali</div>
-                    <div class="testimonial-text">"Needed it for a quick design job and it worked perfectly for the
-                      price!"
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="testimonial">
-                  <div class="testimonial-avatar">
-                    <img src="imgs/imag5es.jpg" alt="User">
-                  </div>
-                  <div class="testimonial-content">
-                    <div class="testimonial-name">Umar</div>
-                    <div class="testimonial-text">"PLP is a game changer for my graphic designing services, been using
-                      it for
-                      40 days."</div>
                   </div>
                 </div>
               </div>
@@ -507,7 +571,7 @@
 
     <div class="section-divider"></div>
 
-    <div class="container-2">
+    <div class="container-2" id="faq">
       <section class="faq-section">
         <div class="faq-header">
           <h2 class="faq-title section-heading">Frequently Asked<span class="highlight"> Questions</span></h2>
@@ -517,56 +581,51 @@
         <div class="faq-container">
           <div class="faq-item">
             <div class="faq-question">
-              <span>Will I really get full Canva Pro features?</span>
+              <span>How many devices can I use Surfshark on?</span>
               <div class="faq-icon"></div>
             </div>
             <div class="faq-answer">
-              <p>Yes you'll have access to everything Canva Pro offers, including premium templates, AI tools, brand
-                kit, background remover, and more. We only provide official team-based access.</p>
+              <p>Unlimited! Use it on phone, tablet, laptop – all at the same time.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span> How fast will my Canva Pro be active?</span>
+              <span> Is my privacy protected?</span>
               <div class="faq-icon"></div>
             </div>
             <div class="faq-answer">
-              <p>Usually within 13 hours after your payment. Sometimes during rush hours, it can take up to 24 hours
-                max, but we promise itll be worth the short wait.</p>
+              <p>Yes – Surfshark follows a strict no-log policy and includes ad-blocker and IP masking.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span>Can I use my own Canva account or need a new one?</span>
+              <span>Can I access Netflix or blocked sites?</span>
               <div class="faq-icon"></div>
             </div>
             <div class="faq-answer">
-              <p>You can use your own existing account no need to create a new one. Just share your email, and
-                well send you the team invite. Simple and secure.</p>
+              <p> Absolutely. Stream and browse content worldwide with high-speed global servers.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span>Is this a one-time or recurring payment?</span>
+              <span>How do I get the login?</span>
               <div class="faq-icon"></div>
             </div>
             <div class="faq-answer">
-              <p>It's a one-time payment. No subscriptions, no hidden charges. You'll get full access for the selected
-                period (e.g. 1 month)</p>
+              <p> You’ll get your account credentials within 1–3 hours via WhatsApp/email.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <span>What happens if my access stops or doesn't work?</span>
+              <span> What if login stops working?</span>
               <div class="faq-icon"></div>
             </div>
             <div class="faq-answer">
-              <p>Were available 24/7 on WhatsApp. If you face any issue, just message us well fix or replace access
-                without any hassle. Your satisfaction is guaranteed.</p>
+              <p> Message us anytime – we’ll provide instant resolution or a fresh account.</p>
             </div>
           </div>
         </div>
@@ -588,8 +647,22 @@
               <img width="80px" src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png" alt="Logo">
             </div>
             <p class="footer-tagline">
-              Instant &#67;&#97;&#110;&#118;&#97; &#80;&#114;&#111; access. Zero hassle. Unbeatable pricing.
+              🚀 Instant Access to Canva Pro, CapCut, Figma, VidIQ, Surfshark & More – All in One Place. <br>
             </p>
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-icon">🔐</span>
+                <span>100% Secure</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <span> No Hassle</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">💸</span>
+                <span>Unbeatable Prices</span>
+              </div>
+            </div>
             <div class="button-row">
               <!-- Neon Button -->
               <div class="button-container">
@@ -609,7 +682,7 @@
               <li class="footer-link-item"><a href="#how-it-works" class="footer-link">How It Works</a></li>
               <li class="footer-link-item"><a href="#pricing" class="footer-link">Pricing</a></li>
               <li class="footer-link-item"><a href="#faq" class="footer-link">FAQ</a></li>
-              <li class="footer-link-item"><a href="#contact" class="footer-link">Contact</a></li>
+              <li class="footer-link-item"><a href="https://wa.me/+923284385228" class="footer-link">Contact</a></li>
             </ul>
           </div>
 
@@ -630,11 +703,13 @@
             </div>
 
             <div class="footer-social">
-              <a href="https://www.facebook.com/share/16ZxETiXXd/" class="social-icon"><i
+              <a href="https://web.facebook.com/usmandigitalstore/" class="social-icon"><i
                   class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/syedsebt?igsh=dHJ4M3Fzamk2ajdz" class="social-icon"><i
+              <a href="https://www.instagram.com/usmandigitalstore1/" class="social-icon"><i
                   class="fab fa-instagram"></i></a>
-
+              <a href="https://x.com/usmandigitlstor" class="social-icon">
+                <i class="fas fa-times"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -694,7 +769,7 @@
         },
       });
       const swiper2 = new Swiper(".testimonial_swiper", {
-        effect: "slide", 
+        effect: "slide",
 
         spaceBetween: 10,
         autoplay: {

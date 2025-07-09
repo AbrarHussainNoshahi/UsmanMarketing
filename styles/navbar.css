@@ -5,7 +5,7 @@
 }
 
 /* Hamburger icon */
-.hamburger {
+/* .hamburger {
   width: 30px;
   height: 20px;
   display: flex;
@@ -21,7 +21,7 @@
   background: white;
   border-radius: 10px;
   transition: 0.4s;
-}
+} */
 
 /* Navbar hidden by default */
 .navbar {
@@ -30,13 +30,16 @@
   width: fit-content;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* opacity: 1; */
+  /* pointer-events: none; */
+  /* transition: opacity 0.5s ease, transform 0.5s ease; */
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   padding: 20px 40px;
   border-radius: 20px;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
 }
 
 /* Navbar links */

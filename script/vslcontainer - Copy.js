@@ -1,3 +1,15 @@
+const menuToggle = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinksMobile');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+
 document.addEventListener('DOMContentLoaded', () => {
 
 const lenis = new Lenis();

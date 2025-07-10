@@ -139,21 +139,36 @@
     </div>
 
     <div class="content">
-        <header>
-            <div class="logo"><img width="70px" src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png">
-            </div>
-            <div class="navbar-container">
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        <div class="hamburger-navbar">
 
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="index.html" class="logo">
+                <img src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png">
+            </a>
+        </div>
+        <div class="nav-links-mobile" id="navLinksMobile">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <a href="./index.html">Canva Pro</a>
+            <a href="./surfshark.html">Surfshark</a>
+            <a href="./vidIQ.html">VidIQ</a>
+            <a href="./skillshare.html">SkillShare</a>
+            <a href="./capcut.html">CapCut Pro</a>
+            <a href="./chatgpt.html">ChatGPT Plus</a>
+        </div>
+        <header>
+            <a href="index.html" class="logo">
+                <img width="70px" src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png">
+            </a>
+            <div class="navbar-container">
                 <nav class="navbar" id="navbar">
                     <ul class="nav-links">
                         <li><a href="./index.html">Canva Pro</a></li>
                         <li><a href="./surfshark.html">Surfshark</a></li>
-                        <li><a href="./vidIQ.html">VidIQ</a></li>
+                        <!-- <li><a href="./vidIQ.html">VidIQ</a></li> -->
                         <li><a href="./skillshare.html">SkillShare</a></li>
                         <li><a href="./capcut.html">CapCut Pro</a></li>
                         <li><a href="./chatgpt.html">ChatGPT Plus</a></li>
@@ -163,9 +178,9 @@
             <div class="button-row">
                 <!-- Neon Button -->
                 <div class="button-container">
-                    <button onclick="location.href='#plans'" class="btn header-button">
+                    <button onclick="location.href='#pricing'" class="btn header-button">
                         <div class="particles"></div>
-                        <span><a href="#plans">BUY NOW</a></span>
+                        <span><a href="#pricing">BUY NOW</a></span>
                     </button>
                 </div>
             </div>
@@ -185,10 +200,8 @@
                     <div class="vsl-container">
                         <div class="vsl-gradient-border">
                             <div class="vsl-inner">
-                                <video id="vsl-video" controls
-                                    poster="./videos/WhatsApp Video 2025-06-12 at 4.37.59 PM - frame at 0m16s.png"
-                                    autoplay preload="none"
-                                    src="videos/WhatsApp%20Video%202025-06-12%20at%204.37.59%20PM.mp4">
+                                <video id="vsl-video" controls poster="./videos/vidIQ_poster.png" autoplay
+                                    preload="none" src="videos/vidIQ.mp4">
                                     <source>
                                     Your browser does not support the video tag.
                                 </video>
@@ -242,9 +255,9 @@
 
 
                     <div class="button-container">
-                        <button onclick="location.href='#plans'" class="btn">
+                        <button onclick="location.href='#pricing'" class="btn">
                             <div class="particles"></div>
-                            <span><a href="#plans">BUY NOW</a></span>
+                            <span><a href="#pricing">BUY NOW</a></span>
                         </button>
                     </div>
 
@@ -450,13 +463,21 @@
 
                             <div class="swiper-slide">
                                 <div class="testimonial">
-                                    <div class="testimonial-avatar">
-                                        <img src="imgs/4e8f40efdce77bd0870bba5fc7f4e6e8.jpg" alt="User">
-                                    </div>
+
                                     <div class="testimonial-content">
-                                        <div class="testimonial-name">Ali</div>
-                                        <div class="testimonial-text">"This is exactly what helped me find better
-                                            titles, rank faster, and beat competitors. Totally worth it!""
+                                        <div class="testimonial-name">Junaid Aslam</div>
+                                        <div class="testimonial-text">“Simple, clean website. Loved the
+                                            professionalism.”
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-name">Maryam Khalid</div>
+                                        <div class="testimonial-text">“No hidden fees, just what I needed.”
                                         </div>
                                     </div>
                                 </div>
@@ -491,11 +512,12 @@
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>  What will I get with VidIQ Pro?</span>
+                            <span> What will I get with VidIQ Pro?</span>
                             <div class="faq-icon"></div>
                         </div>
                         <div class="faq-answer">
-                            <p>AI title tools, SEO keyword research, channel tracking, trending video alerts, and more.</p>
+                            <p>AI title tools, SEO keyword research, channel tracking, trending video alerts, and more.
+                            </p>
                         </div>
                     </div>
 
@@ -505,7 +527,8 @@
                             <div class="faq-icon"></div>
                         </div>
                         <div class="faq-answer">
-                            <p> We can’t promise overnight growth, but VidIQ Pro gives you the best tools to grow smarter.</p>
+                            <p> We can’t promise overnight growth, but VidIQ Pro gives you the best tools to grow
+                                smarter.</p>
                         </div>
                     </div>
 
@@ -558,9 +581,9 @@
                         <div class="button-row">
                             <!-- Neon Button -->
                             <div class="button-container">
-                                <button onclick="location.href='#plans'" class="btn header-button">
+                                <button onclick="location.href='#pricing'" class="btn header-button">
                                     <div class="particles"></div>
-                                    <span><a href="#plans">BUY NOW</a></span>
+                                    <span><a href="#pricing">BUY NOW</a></span>
                                 </button>
                             </div>
                         </div>
@@ -570,7 +593,7 @@
                     <div class="footer-col">
                         <h3 class="footer-heading">Quick Links</h3>
                         <ul class="footer-links">
-                            <li class="footer-link-item"><a href="#home" class="footer-link">Home</a></li>
+                            <li class="footer-link-item"><a href="#content" class="footer-link">Home</a></li>
                             <li class="footer-link-item"><a href="#how-it-works" class="footer-link">How It Works</a>
                             </li>
                             <li class="footer-link-item"><a href="#pricing" class="footer-link">Pricing</a></li>

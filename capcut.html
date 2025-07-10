@@ -139,23 +139,38 @@
     </div>
 
     <div class="content">
-        <header>
-            <div class="logo"><img width="70px" src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png">
-            </div>
-            <div class="navbar-container">
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        <div class="hamburger-navbar">
 
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="index.html" class="logo">
+                <img src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png">
+            </a>
+        </div>
+        <div class="nav-links-mobile" id="navLinksMobile">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <a href="./index.html">Canva Pro</a>
+            <a href="./surfshark.html">Surfshark</a>
+            <a href="./vidIQ.html">VidIQ</a>
+            <a href="./skillshare.html">SkillShare</a>
+            <a href="./capcut.html">CapCut Pro</a>
+            <a href="./chatgpt.html">ChatGPT Plus</a>
+        </div>
+        <header>
+            <a href="index.html" class="logo">
+                <img width="70px" src="imgs/ChatGPT_Image_Jun_13__2025__07_00_35_PM-removebg-preview.png">
+            </a>
+            <div class="navbar-container">
                 <nav class="navbar" id="navbar">
                     <ul class="nav-links">
                         <li><a href="./index.html">Canva Pro</a></li>
                         <li><a href="./surfshark.html">Surfshark</a></li>
                         <li><a href="./vidIQ.html">VidIQ</a></li>
                         <li><a href="./skillshare.html">SkillShare</a></li>
-                        <li><a href="./capcut.html">CapCut Pro</a></li>
+                        <!-- <li><a href="./capcut.html">CapCut Pro</a></li> -->
                         <li><a href="./chatgpt.html">ChatGPT Plus</a></li>
                     </ul>
                 </nav>
@@ -163,9 +178,9 @@
             <div class="button-row">
                 <!-- Neon Button -->
                 <div class="button-container">
-                    <button onclick="location.href='#plans'" class="btn header-button">
+                    <button onclick="location.href='#pricing'" class="btn header-button">
                         <div class="particles"></div>
-                        <span><a href="#plans">BUY NOW</a></span>
+                        <span><a href="#pricing">BUY NOW</a></span>
                     </button>
                 </div>
             </div>
@@ -183,10 +198,8 @@
                     <div class="vsl-container">
                         <div class="vsl-gradient-border">
                             <div class="vsl-inner">
-                                <video id="vsl-video" controls
-                                    poster="./videos/WhatsApp Video 2025-06-12 at 4.37.59 PM - frame at 0m16s.png"
-                                    autoplay preload="none"
-                                    src="videos/WhatsApp%20Video%202025-06-12%20at%204.37.59%20PM.mp4">
+                                <video id="vsl-video" controls poster="./videos/capcut_poster.png" autoplay
+                                    preload="none" src="videos/capcut.mp4">
                                     <source>
                                     Your browser does not support the video tag.
                                 </video>
@@ -240,9 +253,9 @@
 
 
                     <div class="button-container">
-                        <button onclick="location.href='#plans'" class="btn">
+                        <button onclick="location.href='#pricing'" class="btn">
                             <div class="particles"></div>
-                            <span><a href="#plans">BUY NOW</a></span>
+                            <span><a href="#pricing">BUY NOW</a></span>
                         </button>
                     </div>
 
@@ -444,13 +457,21 @@
 
                             <div class="swiper-slide">
                                 <div class="testimonial">
-                                    <div class="testimonial-avatar">
-                                        <img src="imgs/4e8f40efdce77bd0870bba5fc7f4e6e8.jpg" alt="User">
-                                    </div>
+
                                     <div class="testimonial-content">
-                                        <div class="testimonial-name">Ali</div>
-                                        <div class="testimonial-text">"Perfect for testing or when you need secure
-                                            browsing on one phone!"
+                                        <div class="testimonial-name">Salman Javed</div>
+                                        <div class="testimonial-text">“Got exactly what I paid for. Reliable platform.”
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-name">Komal Mehdi</div>
+                                        <div class="testimonial-text">“Clear communication, transparent and smooth
+                                            experience.”
                                         </div>
                                     </div>
                                 </div>
@@ -504,13 +525,20 @@
                         <div class="swiper-wrapper" id="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="testimonial">
-                                    <div class="testimonial-avatar">
-                                        <img src="imgs/4e8f40efdce77bd0870bba5fc7f4e6e8.jpg" alt="User">
-                                    </div>
+
                                     <div class="testimonial-content">
-                                        <div class="testimonial-name">Ali</div>
-                                        <div class="testimonial-text">"Super stable, I’ve been using this plan on my
-                                            laptop for months!""
+                                        <div class="testimonial-name">Umar Farooq</div>
+                                        <div class="testimonial-text">“I used their digital planner — extremely useful.”
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-name">Hamza Shahid</div>
+                                        <div class="testimonial-text">“High-quality templates and no watermark!”
                                         </div>
                                     </div>
                                 </div>
@@ -528,7 +556,7 @@
                     </div>
 
                     <div class="plan-price">
-                        <div class="price-amount">Rs 4000</div>
+                        <div class="price-amount">Rs 9500</div>
                         <div class="price-period">1 Year Plan</div>
                         <div class="savings-badge"> MAX VALUE FOR POWER USERS</div>
                     </div>
@@ -567,14 +595,20 @@
                         <div class="swiper-wrapper" id="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="testimonial">
-                                    <div class="testimonial-avatar">
-                                        <img src="imgs/images.jpg" alt="User">
-                                    </div>
                                     <div class="testimonial-content">
-                                        <div class="testimonial-name">Hassan</div>
+                                        <div class="testimonial-name">Amina Tariq</div>
                                         <div class="testimonial-text">"Loved having my own account! Works on mobile, TV,
                                             and my PC all at
                                             once."
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial">
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-name">Bilal Siddiqui</div>
+                                        <div class="testimonial-text">“Loved the interface. User-friendly and clean.”
                                         </div>
                                     </div>
                                 </div>
@@ -691,9 +725,9 @@
                         <div class="button-row">
                             <!-- Neon Button -->
                             <div class="button-container">
-                                <button onclick="location.href='#plans'" class="btn header-button">
+                                <button onclick="location.href='#pricing'" class="btn header-button">
                                     <div class="particles"></div>
-                                    <span><a href="#plans">BUY NOW</a></span>
+                                    <span><a href="#pricing">BUY NOW</a></span>
                                 </button>
                             </div>
                         </div>
@@ -703,7 +737,7 @@
                     <div class="footer-col">
                         <h3 class="footer-heading">Quick Links</h3>
                         <ul class="footer-links">
-                            <li class="footer-link-item"><a href="#home" class="footer-link">Home</a></li>
+                            <li class="footer-link-item"><a href="#content" class="footer-link">Home</a></li>
                             <li class="footer-link-item"><a href="#how-it-works" class="footer-link">How It Works</a>
                             </li>
                             <li class="footer-link-item"><a href="#pricing" class="footer-link">Pricing</a></li>

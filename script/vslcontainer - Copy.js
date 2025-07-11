@@ -12,6 +12,24 @@ const menuToggle = document.getElementById('hamburger');
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
+   const swiperWrapper = document.getElementById("swiper-wrapper");
+      const imageCount = 14; // Total number of images
+      const extensions = ['jpeg', 'jpeg', 'jpeg', 'jpeg', 'jpeg', 'jpg', 'jpeg', 'jpeg', 'jpeg', 'jpeg', 'jpg', 'jpg', 'jpg', 'jpg', 'jpg'];
+
+      for (let i = 1; i <= imageCount; i++) {
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide";
+
+        const img = document.createElement("img");
+        img.src = `./imgs/wins/${i}.${extensions[i - 1]}`;
+        img.alt = `Slide ${i}`;
+
+        slide.appendChild(img);
+        swiperWrapper.appendChild(slide);
+      }
+
+
 const lenis = new Lenis();
 lenis.on('scroll', ScrollTrigger.update);
 

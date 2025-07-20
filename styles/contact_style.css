@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&amp;family=Inter+Tight:ital,wght@0,100..900;1,100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap');
+
+:root {
+    --canva-purple: #8b3dff;
+    --canva-pink: #ff3e98;
+    --canva-blue: #00c4cc;
+    --dark: #0f0f0f;
+    --darker: #070707;
+    --gradient-primary: linear-gradient(135deg, #8b3dff 0%, #ff3e98 100%);
+    --gradient-secondary: linear-gradient(135deg, #00c4cc 0%, #8b3dff 100%);
+    --gradient-gold: linear-gradient(to top, #f2c238 2.09%, #a27a3d 86.55%);
+    --button-glow: 0 4px 50px 0 rgba(139, 61, 255, 0.4);
+    --button-glow-hover: 0 6px 20px 0 rgba(139, 61, 255, 0.6);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --border-light: rgba(255, 255, 255, 0.1);
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-card-hover: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+.cal-sans-regular {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-regular {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    background: var(--dark) ;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+}
+
+.content {
+    position: relative;
+    z-index: 5;
+    padding: 0rem 6%;
+    margin: 0 auto;
+    width: 100%;
+    opacity: 1;
+}
+
+.section-heading {
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+.highlight {
+  background: var(--gradient-secondary);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   position: relative;
+   background-size: 200% auto;
+}
+
+.btn {
+    position: relative;
+    z-index: 1;
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    padding: 14px 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 12px;
+max-width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    filter: brightness(0.95);
+}
+
+.section-divider {
+    width: 80%;
+    max-width: 400px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--canva-purple), transparent);
+    margin-top: 13rem ;
+    opacity: 0.6;
+}
+
+.cal-sans{
+    font-family: 'Cal Sans', sans-serif;
+}
+
+.inter{
+    font-family: 'Inter', sans-serif;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.button-container, 
+.btn, 
+.feature-card, 
+.module-card,
+.testimonial-card,
+.coach-card,
+.faq-item,
+.nav-scrolled,
+footer a,
+.prev-btn, 
+.next-btn {
+  transition: all 0.3s ease;
+}
+
+.button-container:hover {
+  transform: scale(1.03);
+}
+
+.button-container:active {
+  transform: scale(0.95);
+}
+
+.feature-card {
+  border-color: rgba(201, 166, 78, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(201, 166, 78, 0.4);
+}
+
+footer a {
+  transition: color 0.3s ease-out;
+}
+
+footer a:hover {
+  color:  var(--canva-pink);
+};
+
+
+.btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Highlight word animation */
+.highlight {
+  animation: highlight-pulse 3s infinite alternate;
+}
+
+@keyframes highlight-pulse {
+  0% { color: #DABC6A; }
+  50% { color: #F2C238; }
+  100% { color: #DABC6A; }
+}
+
+/* Fade-in animations */
+.fade-in {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Go-to-top button */
+#go-top {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#go-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation scroll effect */
+nav {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav.nav-scrolled {
+  background-color: rgba(18, 18, 26, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Module card animations */
+.module-card {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease, scale 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.module-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial card animations */
+.testimonial-card {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}

@@ -1,62 +1,70 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Get form data and sanitize
-    $firstName   = htmlspecialchars(trim($_POST['FirstName']));
-    $lastName    = htmlspecialchars(trim($_POST['LastName']));
-    $email       = filter_var(trim($_POST['Email']), FILTER_SANITIZE_EMAIL);
-    $phone       = htmlspecialchars(trim($_POST['PhoneNumber']));
-    $message     = htmlspecialchars(trim($_POST['Message']));
+// Start session to store messages
+session_start();
 
-    $fullName = $firstName . ' ' . $lastName;
+// Initialize variables
+$errors = [];
+$success = "";
 
-    // Validate required fields
-    if (empty($firstName) || empty($lastName) || empty($email) || empty($message)) {
-        die("Please fill in all required fields.");
+// Check if form was submitted via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize inputs
+    $firstName = trim(htmlspecialchars($_POST["FirstName"] ?? ''));
+    $lastName = trim(htmlspecialchars($_POST["LastName"] ?? ''));
+    $email = trim($_POST["Email"] ?? '');
+    $phone = trim(htmlspecialchars($_POST["PhoneNumber"] ?? ''));
+    $message = trim(htmlspecialchars($_POST["Message"] ?? ''));
+
+    // === Validate fields ===
+
+    if (empty($firstName)) {
+        $errors[] = "First Name is required.";
     }
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email address.");
+    if (empty($lastName)) {
+        $errors[] = "Last Name is required.";
     }
 
-    // Email configuration
-    $to      = "support@usmandigitalstore.com"; // <-- Replace with your email
-    $subject = "New Contact Form Submission";
-
-    // HTML email body
-    $email_content = "
-    <html>
-    <head>
-        <style>
-            table { font-family: Arial, sans-serif; border-collapse: collapse; width: 100%; }
-            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-            th { background-color: #f2f2f2; }
-        </style>
-    </head>
-    <body>
-        <h2>Contact Form Submission</h2>
-        <table>
-            <tr><th>Full Name</th><td>{$fullName}</td></tr>
-            <tr><th>Email</th><td>{$email}</td></tr>
-            <tr><th>Phone Number</th><td>{$phone}</td></tr>
-            <tr><th>Message</th><td>{$message}</td></tr>
-        </table>
-    </body>
-    </html>
-    ";
-
-    // Headers
-    $headers  = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: {$fullName} <{$email}>\r\n";
-    $headers .= "Reply-To: {$email}\r\n";
-
-    // Send email
-    if (mail($to, $subject, $email_content, $headers)) {
-        echo "Thank you! Your message has been sent.";
-    } else {
-        echo "Sorry, something went wrong. Please try again later.";
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "A valid Email is required.";
     }
-} else {
-    echo "Invalid request method.";
+
+    if (empty($phone)) {
+        $errors[] = "Phone Number is required.";
+    }
+
+    if (empty($message)) {
+        $errors[] = "Message cannot be empty.";
+    }
+
+    // === If no errors, proceed ===
+    if (empty($errors)) {
+        $to = "support@usmandigitalstore.com"; // Your support email
+        $subject = "New Contact Form Submission";
+        $body = "From: $firstName $lastName\nEmail: $email\nPhone: $phone\n\nMessage:\n$message";
+
+        $headers = "From: $email";
+
+        if (mail($to, $subject, $body, $headers)) {
+            $success = "Thank you! Your message has been sent successfully.";
+        } else {
+            $errors[] = "Message failed to send. Please try again later.";
+        }
+    }
 }
 ?>
+
+<!-- Display messages in your contact.html (embed this block where needed) -->
+<?php if (!empty($errors)): ?>
+    <div style="color: red; font-weight: bold;">
+        <ul>
+            <?php foreach ($errors as $error): ?>
+                <li><?= htmlspecialchars($error) ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php elseif (!empty($success)): ?>
+    <div style="color: green; font-weight: bold;">
+        <?= htmlspecialchars($success) ?>
+    </div>
+<?php endif; ?>

@@ -1,3 +1,72 @@
+<?php
+// Start session if needed
+session_start();
+
+// Define variables and error placeholders
+$firstName = $lastName = $email = $phone = $message = "";
+$firstNameErr = $lastNameErr = $emailErr = $phoneErr = $messageErr = "";
+$successMsg = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize input
+    function sanitize($data) {
+        return htmlspecialchars(trim($data));
+    }
+
+    $firstName = sanitize($_POST["FirstName"] ?? '');
+    $lastName = sanitize($_POST["LastName"] ?? '');
+    $email = trim($_POST["Email"] ?? '');
+    $phone = sanitize($_POST["PhoneNumber"] ?? '');
+    $message = sanitize($_POST["Message"] ?? '');
+
+    $isValid = true;
+
+    // Validate each field and store error messages
+    if (empty($firstName)) {
+        $firstNameErr = "First Name is required.";
+        $isValid = false;
+    }
+
+    if (empty($lastName)) {
+        $lastNameErr = "Last Name is required.";
+        $isValid = false;
+    }
+
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "A Valid Email is required.";
+        $isValid = false;
+    }
+
+    if (empty($phone)) {
+        $phoneErr = "Phone Number is required.";
+        $isValid = false;
+    }
+
+    if (empty($message)) {
+        $messageErr = "Please enter your message.";
+        $isValid = false;
+    }
+
+    if ($isValid) {
+        $to = "support@usmandigitalstore.com";
+        $subject = "New Contact Message";
+        $body = "From: $firstName $lastName\nEmail: $email\nPhone: $phone\n\nMessage:\n$message";
+        $headers = "From: $email";
+
+        if (mail($to, $subject, $body, $headers)) {
+            echo "<script>alert('Thank you! Your message has been sent successfully.'); window.location.href='contact.php';</script>";
+            exit();
+            // $successMsg = "Thank you! Your message has been sent successfully.";
+            // Clear form after success
+            $firstName = $lastName = $email = $phone = $message = "";
+        } else {
+            $messageErr = "Message failed to send. Try again later.";
+        }
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +79,6 @@
         type="image/x-icon">
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="styles/contact_style.css">
-    <link rel="stylesheet" href="styles/premiumbackground.css">
     <link rel="stylesheet" href="styles/header.css">
 
     <link rel="stylesheet" href="css/style.css">
@@ -147,7 +215,7 @@
             <a href="./skillshare.html">SkillShare</a>
             <a href="./capcut.html">CapCut Pro</a>
             <a href="./chatgpt.html">ChatGPT Plus</a>
-            <a href="./contact.html">Contact Us</a>
+            <a href="./contact.php">Contact Us</a>
         </div>
         <header>
             <a href="https://usmandigitalstore.com/" class="logo"
@@ -205,7 +273,7 @@
                         </div>
                     </div>
                     <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6 right-one" id="i1zj">
-                        <form class="form-box">
+                        <form class="form-box" method="post" id="contactForm" action="./contact.php">
                             <div class="container-block form-wrapper">
                                 <p class="text-blk contactus-head">
                                     <a class="link" href="">
@@ -216,33 +284,36 @@
                                     We will get back to you in 24 hours
                                 </p>
                                 <div class="responsive-container-block">
-                                    <form action="contact-form-handler.php" method="post">
 
                                         <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                             id="i10mt-7">
                                             <input class="input" id="ijowk-7" name="FirstName" placeholder="First Name">
+                                             <div style="color: red; font-size: 12px;"><?= $firstNameErr ?></div>
                                         </div>
                                         <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                             id="i1ro7">
                                             <input class="input" id="indfi-5" name="LastName" placeholder="Last Name">
+                                             <div style="color: red; font-size: 12px;"><?= $lastNameErr ?></div>
                                         </div>
                                         <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-6 wk-ipadp-6 emial"
                                             id="ityct">
                                             <input class="input" id="ipmgh-7" name="Email" placeholder="Email">
+                                             <div style="color: red; font-size: 12px;"><?= $emailErr ?></div>
                                         </div>
                                         <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
                                             <input class="input" id="imgis-6" name="PhoneNumber" placeholder="Phone Number">
+                                             <div style="color: red; font-size: 12px;"><?= $phoneErr ?></div>
                                         </div>
                                         <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                             id="i634i-7">
                                             <textarea name="Message" aria-placeholder="Type message here" class="textinput" id="i5vyy-7"
                                                 placeholder="Type message here"></textarea>
+                                                 <div style="color: red; font-size: 12px;"><?= $messageErr ?></div>
                                         </div>
-                                    </form>
+                                        <button class="submit-btn btn" type="submit">
+                                            Get quote
+                                        </button>
                                 </div>
-                                <button class="submit-btn btn" type="submit">
-                                    Get quote
-                                </button>
                             </div>
                         </form>
                     </div>

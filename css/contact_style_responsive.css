@@ -61,6 +61,9 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .left-one{
+    margin-right: 40px !important;
+  }
   .wk-ipadp-1 {
     width: 8.333333%;
   }
@@ -111,6 +114,12 @@ body {
 }
 
 @media (max-width: 768px) {
+  .left-one{
+    margin-right: 0px !important;
+  }
+  .right-one{
+    margin-top: 30px;
+  }
   .wk-tab-1 {
     width: 8.333333%;
   }

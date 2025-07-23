@@ -1,7 +1,213 @@
+<?php
+$productData = [
+    'canva' => [
+        [ 'id' => 1, 'name' => 'Canva Pro Spark', 'price' => 299 ],
+        [ 'id' => 2, 'name' => 'Canva Pro Flow', 'price' => 599 ],
+        [ 'id' => 3, 'name' => 'Canva Pro Legacy', 'price' => 1299 ],
+    ],
+    'surfshark' => [
+        [ 'id' => 1, 'name' => 'Surfshark Lite Plan', 'price' => 300 ],
+        [ 'id' => 2, 'name' => 'Surfshark Plus Plan', 'price' => 700 ],
+        [ 'id' => 3, 'name' => 'Surfshark Premium Plan', 'price' => 1500 ],
+    ],
+    'vidiq' => [
+        [ 'id' => 1, 'name' => 'vidIQ Boost (1-Month Private Plan)', 'price' => 800 ]
+    ],
+    'skillshare' => [
+        [ 'id' => 1, 'name' => 'Skillshare Shared Plan', 'price' => 500 ],
+        [ 'id' => 2, 'name' => 'Skillshare Private Plan', 'price' => 899 ]
+    ],
+    'capcut' => [
+        [ 'id' => 1, 'name' => 'CapCut Lite Plan', 'price' => 600 ],
+        [ 'id' => 2, 'name' => 'CapCut Desktop Plan', 'price' => 2000 ],
+        [ 'id' => 3, 'name' => 'CapCut Premium Plan', 'price' => 9500 ],
+    ],
+    'chatgpt' => [
+        [ 'id' => 1, 'name' => 'GPT-4 Semi-Private Plan', 'price' => 1499 ],
+        [ 'id' => 2, 'name' => 'GPT-4 Private Plan', 'price' => 4000 ],
+    ],
+];
+
+$product = $_GET['product'] ?? null;
+$id = $_GET['id'] ?? null;
+
+$matchedProduct = null;
+
+
+if ($product && $id && isset($productData[$product])) {
+    foreach ($productData[$product] as $item) {
+        if ($item['id'] == $id) {
+            $matchedProduct = $item;
+            break;
+        }
+    }
+}
+
+    $emailError = "";
+    $firstNameError = "";
+    $lastNameError = "";
+    $countryError = "";
+    $addressError = "";
+    $cityError = "";
+    $stateError = "";
+    $zipError = "";
+
+$product_name = $matchedProduct['name'] ?? null;
+$product_price = $matchedProduct['price'] ?? null;
+
+
+// if ($matchedProduct) {
+//     echo "ID: " . $matchedProduct['id'] . "<br>";
+//     echo "Name: " . $matchedProduct['name'] . "<br>";
+//     echo "Price: " . $matchedProduct['price'] . "<br>";
+// } else {
+//     echo "Product not found";
+// }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    function sanitize($data) {
+        return htmlspecialchars(strip_tags(trim($data)));
+    }
+
+    // Collect and sanitize inputs
+    $email = sanitize($_POST['email']);
+    $firstName = sanitize($_POST['FirstName']);
+    $lastName = sanitize($_POST['LastName']);
+    $country = sanitize($_POST['selection']);
+    $address = sanitize($_POST['Address']);
+    $apartment = sanitize($_POST['Appartment'] ?? '');
+    $city = sanitize($_POST['TownCity']);
+    $state = sanitize($_POST['StateCounty']);
+    $zip = sanitize($_POST['ZipCode']);
+    $phone = sanitize($_POST['PhoneNumber'] ?? '');
+
+    // Initialize individual error variables
+
+
+    $hasErrors = false;
+
+    // Individual validation
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailError = "Valid Email is required.";
+        $hasErrors = true;
+    }
+
+    if (empty($firstName)) {
+        $firstNameError = "First name is required.";
+        $hasErrors = true;
+    }
+
+    if (empty($lastName)) {
+        $lastNameError = "Last name is required.";
+        $hasErrors = true;
+    }
+
+    if ($country == "select") {
+        $countryError = "Country must be selected.";
+        $hasErrors = true;
+    }
+
+    if (empty($address)) {
+        $cityError = "Address is required.";
+        $hasErrors = true;
+    }
+
+    if (empty($city)) {
+        $cityError = "City is required.";
+        $hasErrors = true;
+    }
+
+    if (empty($state)) {
+        $stateError = "State is required.";
+        $hasErrors = true;
+    }
+
+    if (empty($zip)) {
+        $zipError = "Zip code is required.";
+        $hasErrors = true;
+    }
+    // if ($hasErrors) {
+    //     echo "<h3>Form Errors:</h3><ul>";
+    //     if ($emailError) echo "<li>$emailError</li>";
+    //     if ($firstNameError) echo "<li>$firstNameError</li>";
+    //     if ($lastNameError) echo "<li>$lastNameError</li>";
+    //     if ($countryError) echo "<li>$countryError</li>";
+    //     if ($cityError) echo "<li>$cityError</li>";
+    //     if ($stateError) echo "<li>$stateError</li>";
+    //     if ($zipError) echo "<li>$zipError</li>";
+    //     echo "</ul>";
+    //     exit;
+    // }
+
+
+    // ---------------------
+    // Admin Email
+    // ---------------------
+    $adminEmail = "support@usmandigitalstore.com";
+    $subjectAdmin = "New Order: $product_name";
+    $messageAdmin = "
+    New Order Received:
+
+    Customer Email: $email
+    Name: $firstName $lastName
+    Country: $country
+    Address: $address
+    Apartment: $apartment
+    City: $city
+    State: $state
+    Zip: $zip
+    Phone: $phone
+
+    Product: $product_name
+    Price: $product_price PKR
+    ";
+
+    $headersAdmin = "From: no-reply@usmandigitalstore.com\r\n";
+    $headersAdmin .= "Reply-To: $email\r\n";
+
+    // ---------------------
+    // Customer Email
+    // ---------------------
+    $subjectCustomer = "Thanks for your order, $firstName!";
+    $messageCustomer = "
+    Dear $firstName,
+
+    Thank you for your order of $product_name. We’ve received your information and are processing your order.
+
+    Order Summary:
+    --------------------
+    Product: $product_name
+    Total: $product_price PKR
+
+    We will contact you shortly with more details.
+
+    Best regards,  
+    The Usman Digital Services
+    ";
+
+    $headersCustomer = "From: support@usmandigitalstore.com\r\n";
+    $headersCustomer .= "Reply-To: support@usmandigitalstore.com\r\n";
+    // ---------------------
+    // Send Emails
+    // ---------------------
+    $adminSent = mail($adminEmail, $subjectAdmin, $messageAdmin, $headersAdmin);
+    $customerSent = mail($email, $subjectCustomer, $messageCustomer, $headersCustomer);
+
+    if ($adminSent && $customerSent) {
+         echo "<script>alert('Order Placed Successfully.'); window.location.href = 'index.html'</script>";
+        // echo "<h3>Order Placed Successfully!</h3><p>Thank you, $firstName. A confirmation email has been sent to $email.</p>";
+    } else {
+        echo "<script>alert('Error Sending email.'); window.location.href = 'index.html';</script>";
+        // echo "<h3>Error sending email.</h3><p>Please try again later.</p>";
+    }
+} else {
+    // echo "<script>alert('Invalid Request.');window.location.href = 'index.html';</script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+    
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots"
@@ -22,6 +228,10 @@
 
 </head>
 <style>
+    .error{
+        color: red;
+        font-size: 12px;
+    }
     .footer-col .feature-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -183,7 +393,7 @@
             <h2 class="kafla-headline">Checkout Your <span class="highlight playfair-display">Order </span>
             </h2>
             <div class="responsive-container-block big-container">
-                <form class="form-box" method="post" id="contactForm" action="./contact.php">
+                <form class="form-box" method="post" id="checkoutForm" action="./checkout.php">
                     <div class="responsive-container-block container">
                         <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-7 left-one "
                             id="i1zj">
@@ -198,7 +408,8 @@
                                 </p>
                                 <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                     id="i10mt-7" style="margin-bottom: 20px;">
-                                    <input class="input" id="ijowk-7" name="email" placeholder="Your Email">
+                                    <input class="input" id="ijowk-7"  name="email" type="email" placeholder="Your Email" required>
+                                    <span class="error"><?php $emailError ?></span>
                                 </div>
                                 <p class="text-blk contactus-head">
                                     <a class="link" href="">
@@ -211,7 +422,7 @@
                                 <div class="responsive-container-block">
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                         id="i10mt-7">
-                                        <select name="selection" class="input">
+                                        <select name="selection" class="input" require>
                                             <option value="select">Select a country...</option>
                                             <option value="AFG">Afghanistan</option>
                                             <option value="ALA">Åland Islands</option>
@@ -463,19 +674,23 @@
                                             <option value="ZMB">Zambia</option>
                                             <option value="ZWE">Zimbabwe</option>
                                         </select>
+                                        <span class="error"><?= $countryError ?></span>
                                     </div>
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                         id="i10mt-7">
-                                        <input class="input" id="ijowk-7" name="FirstName" placeholder="First Name">
+                                        <input class="input" id="ijowk-7" name="FirstName" placeholder="First Name" required>
+                                        <span class="error"><?= $firstNameError ?></span>
                                     </div>
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                         id="i1ro7">
-                                        <input class="input" id="indfi-5" name="LastName" placeholder="Last Name">
+                                        <input class="input" id="indfi-5" name="LastName" placeholder="Last Name" required>
+                                        <span class="error"><?= $lastNameError ?></span>
                                     </div>
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                         id="i1ro7-1">
-                                        <input class="input" id="indfi-6" name="Adress"
-                                            placeholder="Address (Optional)">
+                                        <input class="input" id="indfi-6" name="Address"
+                                            placeholder="Address" required>
+                                        <span class="error"><?= $addressError ?></span>
                                     </div>
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12"
                                         id="i1ro7-2">
@@ -485,24 +700,23 @@
 
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-6 wk-ipadp-6 emial"
                                         id="ityct-1">
-                                        <input class="input" id="ipmgh-8" name="TownCity" placeholder="Town / City">
+                                        <input class="input" id="ipmgh-8" name="TownCity" placeholder="Town / City" required>
+                                        <span class="error"><?= $cityError ?></span>
                                     </div>
                                     <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
                                         <input class="input" id="ipmgh-9" name="StateCounty"
-                                            placeholder="State / County">
+                                            placeholder="State / County" required>
+                                        <span class="error"><?= $stateError ?></span>
                                     </div>
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-6 wk-ipadp-6 emial"
                                         id="ityct">
-                                        <input class="input" id="ipmgh-10" name="ZipCode" placeholder="Zip Code">
+                                        <input class="input" id="ipmgh-10" name="ZipCode" placeholder="Zip Code" required>
+                                        <span class="error"><?= $zipError ?></span>
                                     </div>
                                     <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
                                         <input class="input" id="imgis-11" name="PhoneNumber"
                                             placeholder="Phone (Optional)">
                                     </div>
-
-                                    <button class="submit-btn btn" type="submit">
-                                        Place Order
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -514,23 +728,28 @@
                                     </a>
                                     Order Details
                                 </p>
+                                <!-- <div id="plan-details">Loading.....</div> -->
                                 <div class="responsive-container-block">
 
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12 order-block"
                                         id="i10mt-7">
                                         <p class="order_title">Product Name</p>
-                                        <p class="price">Canva Pro Spark</p>
+                                        <p class="price" id="p_name"><?php echo $product_name ?></p>
                                     </div>
                                     <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12 order-block"
                                         id="i10mt-8">
                                         <p class="order_title">Subtotal</p>
-                                        <p class="price">299 PKR</p>
+                                        <p class="price" id="p_subprice"><?php echo $product_price ?></p>
                                     </div>
-                                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12 order-block"
+                                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12 order-block" style="border-bottom: none;"
                                         id="i10mt-9">
                                         <p class="order_title">Total</p>
-                                        <p class="price">299 PKR</p>
+                                        <p class="price" id="p_price"><?php echo $product_price ?></p>
                                     </div>
+                                    
+                                    <button class="submit-btn btn" type="submit">
+                                        Place Order
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -664,11 +883,70 @@
     <script src="./script/lenis.min.js"></script>
     <script src="./script/gsap.min.js"></script>
     <script src="./script/ScrollTrigger.min.js"></script>
-    <script src="script/vslcontainer%20-%20Copy.js"></script>
+    <!-- <script src="script/vslcontainer%20-%20Copy.js"></script> -->
     <script src="./script/swiper-bundle.min.js"></script>
+    <!-- <script>
+        const productData = {
+            canva: [
+                { id: 1, name: 'Canva Pro Spark', price: 299 },
+                { id: 2, name: 'Canva Pro Flow', price: 599 },
+                { id: 3, name: 'Canva Pro Legacy', price: 1299 },
+            ],
+            surfshark: [
+                { id: 1, name: 'Surfshark Lite Plan', price: 300 },
+                { id: 2, name: 'Surfshark Plus Plan', price: 700 },
+                { id: 3, name: 'Surfshark Premium Plan', price: 1500 },
+            ],
+            vidiq: [
+                { id: 1, name: 'vidIQ Boost (1-Month Private Plan)', price: 800 }
+            ],
+            skillshare: [
+                { id: 1, name: 'Skillshare Shared Plan', price: 500 },
+                { id: 2, name: 'Skillshare Private Plan', price: 899 }
+            ],
+            capcut: [
+                { id: 1, name: 'CapCut Lite Plan', price: 600 },
+                { id: 2, name: 'CapCut Desktop Plan', price: 2000 },
+                { id: 3, name: 'CapCut Premium Plan', price: 9500 },
+            ],
+            chatgpt: [
+                { id: 1, name: 'GPT-4 Semi-Private Plan', price: 1499 },
+                { id: 2, name: 'GPT-4 Private Plan', price: 4000 },
+            ]
+        };
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                product: params.get('product'),
+                id: parseInt(params.get('id')),
+            };
+        }
 
+        const { product, id } = getQueryParams();
+        const productPlans = productData[product];
+
+        if (productPlans) {
+            const selectedPlan = productPlans.find(plan => plan.id === id);
+            if (selectedPlan) {
+              document.getElementById('p_name').innerText = selectedPlan.name;
+              document.getElementById('p_subprice').innerText =  `${selectedPlan.price} PKR`;
+              document.getElementById('p_price').innerText =  `${selectedPlan.price} PKR`;
+
+            } else {
+                document.getElementById('plan-details').textContent = 'Plan not found!';
+            }
+        } else {
+            document.getElementById('plan-details').textContent = 'Product not found!';
+        }
+    </script> -->
+    <script>
+        const message = <?php echo $messageAdmin ?>
+        console.log(message);
+    </script>
 
 </body>
 
 
 </html>
+
+<?php echo $messageAdmin ?>

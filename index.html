@@ -470,10 +470,10 @@
             </div>
           </div>
 
-          <a href="checkout.html">
-            <input type="hidden" name="plan" value="Canva Pro">
-            <input type="hidden" name="amount" value="199">
-            <button class="cta-button starter" type="submit">Buy Canva Pro Spark</button>
+          <a>
+            <!-- <input type="hidden" name="plan" value="Canva Pro">
+            <input type="hidden" name="amount" value="199"> -->
+            <button class="cta-button starter" onclick="goToCheckout('canva', 1)">Buy Canva Pro Spark</button>
           </a>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
@@ -540,10 +540,10 @@
             </div>
           </div>
 
-          <a href="checkout.html">
+          <a>
             <input type="hidden" name="plan" value="Canva Monthly Pro">
             <input type="hidden" name="amount" value="499">
-            <button class="cta-button pro" type="submit">Buy Canva Pro Flow</button>
+            <button class="cta-button pro" onclick="goToCheckout('canva', 2)" type="submit">Buy Canva Pro Flow</button>
           </a>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
@@ -612,10 +612,10 @@
             </div>
           </div>
 
-          <a href="checkout.html">
+          <a>
             <input type="hidden" name="plan" value="Canva PLP">
             <input type="hidden" name="amount" value="999">
-            <button class="cta-button team" type="submit">Buy Canva Pro Legacy</button>
+            <button class="cta-button team" onclick="goToCheckout('canva', 3)" type="submit">Buy Canva Pro Legacy</button>
           </a>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
@@ -836,6 +836,11 @@
   <script src="script/vslcontainer%20-%20Copy.js"></script>
   <script src="./script/swiper-bundle.min.js"></script>
   <script>
+
+    function goToCheckout(product, id){
+      console.log(product, id);
+      window.location.href = `checkout.php?product=${product}&id=${id}`;
+    }
     document.addEventListener("DOMContentLoaded", function () {
      
 
@@ -859,15 +864,15 @@
       });
     });
 
-    document.querySelectorAll('.cta-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const plan = button.getAttribute('data-plan');
-        const amount = button.getAttribute('data-amount');
+    // document.querySelectorAll('.cta-button').forEach(button => {
+    //   button.addEventListener('click', () => {
+    //     const plan = button.getAttribute('data-plan');
+    //     const amount = button.getAttribute('data-amount');
 
-        // Redirect directly to backend to start payment
-        window.location.href = `/pay?plan=${encodeURIComponent(plan)}&amount=${amount}`;
-      });
-    });
+    //     // Redirect directly to backend to start payment
+    //     window.location.href = `/pay?plan=${encodeURIComponent(plan)}&amount=${amount}`;
+    //   });
+    // });
   </script>
 
 </body>

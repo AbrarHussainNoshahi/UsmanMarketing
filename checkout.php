@@ -939,14 +939,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.getElementById('plan-details').textContent = 'Product not found!';
         }
     </script> -->
-    <script>
-        const message = <?php echo $messageAdmin ?>
-        console.log(message);
-    </script>
-
 </body>
 
 
 </html>
-
-<?php echo $messageAdmin ?>

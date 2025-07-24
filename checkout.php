@@ -575,7 +575,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
             <h2 class="kafla-headline">Checkout Your <span class="highlight playfair-display">Order </span>
             </h2>
             <div class="responsive-container-block big-container">
-                <form class="form-box" method="post" id="checkoutForm" action="./checkout2.php">
+                <form class="form-box" method="post" id="checkoutForm" action="./checkout.php">
                      <input type="hidden" name="product" value="<?php echo htmlspecialchars($product); ?>">
                      <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                     <div class="responsive-container-block container">

@@ -429,7 +429,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
     $customerSent = mail($email, $subjectCustomer, $messageCustomer, $headersCustomer);
     if ($adminSent && $customerSent){
 
-        header("Location: thankyou.php");
+        header("Location: thankyou.html");
         exit;
     }
 

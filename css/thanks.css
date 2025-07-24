@@ -1,0 +1,126 @@
+.thank_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0px;
+}
+.contents {
+  width: 40%;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.round_tick {
+  font-size: 25px;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #8b3dff 0%, #ff3e98 100%);
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.success {
+  color: #f2c238;
+  text-transform: uppercase;
+  font-size: 10px;
+
+  font-weight: bold;
+  margin: 5px 0px;
+}
+p {
+  text-align: center;
+}
+
+.thanks_title {
+  font-size: 50px;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+.text_success {
+  margin: 10px 0px;
+  text-transform: capitalize;
+}
+.steps_title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #8b3dff;
+  margin: 15px 0px;
+}
+.steps_desc {
+  font-size: 14px;
+  color: white;
+}
+.plan-card {
+  padding: 10px 20px !important;
+}
+.data-item {
+  background: var(--bg-card-hover);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+  border-left: 3px solid var(--canva-purple);
+}
+.data-item span{
+    text-align: center;
+    margin: 10px 0px;
+    text-transform: capitalize;
+}
+.data-item h4{
+    background: linear-gradient(135deg, #8b3dff 0%, #ff3e98 100%);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   position: relative;
+   text-transform: capitalize;
+   font-size: 17px;
+   background-size: 200% auto;
+}
+.data-item p{
+    color: white;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+  @media (max-width: 480px) {
+    
+    .contents{
+        width: 95% !important;
+        padding: 10px;
+    }
+    .thanks_title{
+        font-size: 30px;
+    }
+  }
+
+   @media (min-width: 480px) and (max-width: 576px){
+    .contents{
+        width: 80% !important;
+        padding: 20px ;
+    }
+   }
+   @media (max-width: 768px){
+    .contents{
+        width: 70% !important;
+        padding: 20px;
+    }
+    .thanks_title{
+        font-size: 35px;
+    }
+   }
+
+   @media (max-width: 1200px){
+    .contents{
+        width: 60% !important;
+        padding: 20px 30px;
+    }
+   }

@@ -332,7 +332,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
     $state = $_POST['StateCounty'] ?? '';
     $zip = $_POST['ZipCode'] ?? '';
     $phone = $_POST['PhoneNumber'] ?? '';
-
+    $product_name = $matchedProduct['name'] ?? '';
+    $product_price = $matchedProduct['price'] ?? '';
 
     $isValid = true;
 
@@ -342,43 +343,95 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
     }
     if($isValid){
         // Email addresses
-        $adminEmail = "support@usmandigitalstore.com";
-        $customerEmail = $email;
-        $adminSubject = "New Order Received";
-        $adminMessage = "
-        <h2>New Order Details</h2>
-        <p><strong>Product:</strong> $product_name</p>
-        <p><strong>Price:</strong> $product_price</p>
-        <p><strong>Email:</strong> $email</p>
-        <p><strong>Name:</strong> $firstName $lastName</p>
-        <p><strong>Address:</strong> $address $appartment, $city, $state, $zip, $country</p>
-        <p><strong>Phone:</strong> $phone</p>
-        ";
+        // $adminEmail = "support@usmandigitalstore.com";
+        // $customerEmail = $email;
+        // $adminSubject = "New Order Received";
+        // $adminMessage = "
+        // <h2>New Order Details</h2>
+        // <p><strong>Product:</strong> $product_name</p>
+        // <p><strong>Price:</strong> $product_price</p>
+        // <p><strong>Email:</strong> $email</p>
+        // <p><strong>Name:</strong> $firstName $lastName</p>
+        // <p><strong>Address:</strong> $address $appartment, $city, $state, $zip, $country</p>
+        // <p><strong>Phone:</strong> $phone</p>
+        // ";
 
-        // Email headers for HTML mail
-        $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $headers .= "From: Usman Digital Store <$adminEmail>" . "\r\n";
+        // // Email headers for HTML mail
+        // $headers = "MIME-Version: 1.0" . "\r\n";
+        // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        // $headers .= "From: Usman Digital Store <$adminEmail>" . "\r\n";
 
-        // Send to Admin
-        mail($adminEmail, $adminSubject, $adminMessage, $headers);
+        // // Send to Admin
+        // mail($adminEmail, $adminSubject, $adminMessage, $headers);
 
-        // ----------- Send Email to Customer -----------
-        $customerSubject = "Order Confirmation";
-        $customerMessage = "
-        <h2>Thank you for your order!</h2>
-        <p>Hi $firstName,</p>
-        <p>We've received your order for <strong>$product_name</strong> and are currently processing it.</p>
-        <p>We’ll send you an update soon.</p>
-        <br>
-        <p>Thanks,</p>
-        <p>Usman Digital Store</p>
-        ";
+        // // ----------- Send Email to Customer -----------
+        // $customerSubject = "Order Confirmation";
+        // $customerMessage = "
+        // <h2>Thank you for your order!</h2>
+        // <p>Hi $firstName,</p>
+        // <p>We've received your order for <strong>$product_name</strong> and are currently processing it.</p>
+        // <p>We’ll send you an update soon.</p>
+        // <br>
+        // <p>Thanks,</p>
+        // <p>Usman Digital Store</p>
+        // ";
 
-        // Send to Customer
-        mail($customerEmail, $customerSubject, $customerMessage, $headers);
+        // // Send to Customer
+        // mail($customerEmail, $customerSubject, $customerMessage, $headers);
+    $adminEmail = "support@usmandigitalstore.com";
+    $subjectAdmin = "New Order: $product_name";
+    $messageAdmin = "
+    New Order Received:
+
+    Customer Email: $email
+    Name: $firstName $lastName
+    Country: $country
+    Address: $address
+    Apartment: $apartment
+    City: $city
+    State: $state
+    Zip: $zip
+    Phone: $phone
+
+    Product: $product_name
+    Price: $product_price PKR
+    ";
+
+    $headersAdmin = "From: no-reply@usmandigitalstore.com\r\n";
+    $headersAdmin .= "Reply-To: $email\r\n";
+
+    // ---------------------
+    // Customer Email
+    // ---------------------
+    $subjectCustomer = "Thanks for your order, $firstName!";
+    $messageCustomer = "
+    Dear $firstName,
+
+    Thank you for your order of $product_name. We’ve received your information and are processing your order.
+
+    Order Summary:
+    --------------------
+    Product: $product_name
+    Total: $product_price PKR
+
+    We will contact you shortly with more details.
+
+    Best regards,  
+    The Usman Digital Services
+    ";
+
+    $headersCustomer = "From: support@usmandigitalstore.com\r\n";
+    $headersCustomer .= "Reply-To: support@usmandigitalstore.com\r\n";
+    // ---------------------
+    // Send Emails
+    // ---------------------
+    $adminSent = mail($adminEmail, $subjectAdmin, $messageAdmin, $headersAdmin);
+    $customerSent = mail($email, $subjectCustomer, $messageCustomer, $headersCustomer);
+    if ($adminSent && $customerSent){
+
         header("Location: thankyou.php");
         exit;
+    }
 
     }
 

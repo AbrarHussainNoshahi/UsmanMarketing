@@ -108,7 +108,7 @@ p {
         padding: 20px ;
     }
    }
-   @media (max-width: 768px){
+   @media (min-width: 577px) and (max-width: 768px){
     .contents{
         width: 70% !important;
         padding: 20px;
@@ -118,7 +118,7 @@ p {
     }
    }
 
-   @media (max-width: 1200px){
+   @media (min-width: 768px) and (max-width: 1200px){
     .contents{
         width: 60% !important;
         padding: 20px 30px;

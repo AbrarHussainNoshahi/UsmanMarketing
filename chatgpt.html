@@ -452,10 +452,11 @@
                             <div class="feature-text">No email or full account control</div>
                         </div>
                     </div>
-
-                    <a>
-                        <button class="cta-button starter" onclick="goToCheckout('chatgpt', 1)" type="submit">GET SEMI-PRIVATE PLAN</button>
-                    </a>
+                    <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="SEMI-PRIVATE PLAN">
+                        <input type="hidden" name="amount" value="1499">
+                        <button class="cta-button starter" type="submit">GET SEMI-PRIVATE PLAN</button>
+                    </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
 
@@ -526,10 +527,11 @@
                             <div class="feature-text">Activity misuse or account misuse not covered by guarantee</div>
                         </div> -->
                     </div>
-
-                    <a>
-                        <button class="cta-button pro" onclick="goToCheckout('chatgpt', 2)" type="submit">GET PRIVATE GPT-4 ACCESS</button>
-                    </a>
+                      <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="PRIVATE GPT-4 ACCESS">
+                        <input type="hidden" name="amount" value="4000">
+                        <button class="cta-button starter" type="submit">GET PRIVATE GPT-4 ACCESS</button>
+                    </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
                             <div class="swiper-slide">
@@ -749,10 +751,10 @@
     <script src="script/vslcontainer%20-%20Copy.js"></script>
     <script src="./script/swiper-bundle.min.js"></script>
     <script>
-        function goToCheckout(product, id){
-         console.log(product, id);
-         window.location.href = `checkout.php?product=${product}&id=${id}`;
-        }
+        // function goToCheckout(product, id){
+        //  console.log(product, id);
+        //  window.location.href = `checkout.php?product=${product}&id=${id}`;
+        // }
         document.addEventListener("DOMContentLoaded", function () {
             const swiperWrapper = document.getElementById("swiper-wrapper");
             const imageCount = 10; // Total number of images

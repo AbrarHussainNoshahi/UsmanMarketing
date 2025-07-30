@@ -446,10 +446,11 @@
                             <div class="feature-text">Device switch guarantee</div>
                         </div>
                     </div>
-
-                    <a>
-                        <button class="cta-button starter" onclick="goToCheckout('capcut', 1)" type="submit">GET LITE PLAN</button>
-                    </a>
+                      <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="LITE PLAN">
+                        <input type="hidden" name="amount" value="600">
+                        <button class="cta-button starter" type="submit">GET LITE PLAN</button>
+                      </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
 
@@ -513,10 +514,11 @@
                             <div class="feature-text">Use on 1 device only (no login sharing or transfer)</div>
                         </div>
                     </div>
-
-                    <a>
-                        <button class="cta-button pro" type="submit" onclick="goToCheckout('capcut', 2)" >GET DESKTOP PLAN</button>
-                    </a>
+                      <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="DESKTOP PLAN">
+                        <input type="hidden" name="amount" value="2000">
+                        <button class="cta-button starter" type="submit">GET DESKTOP PLAN</button>
+                    </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
                             <div class="swiper-slide">
@@ -581,10 +583,11 @@
                                 tablet max)</div>
                         </div>
                     </div>
-
-                    <a>
-                        <button class="cta-button team" type="submit" onclick="goToCheckout('capcut', 3)" >GET 1-YEAR PREMIUM</button>
-                    </a>
+                      <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="Capcut 1-YEAR PREMIUM">
+                        <input type="hidden" name="amount" value="9500">
+                        <button class="cta-button starter" type="submit">GET 1-YEAR PREMIUM</button>
+                    </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
                             <div class="swiper-slide">
@@ -807,10 +810,10 @@
     <script src="script/vslcontainer%20-%20Copy.js"></script>
     <script src="./script/swiper-bundle.min.js"></script>
     <script>
-        function goToCheckout(product, id){
-         console.log(product, id);
-         window.location.href = `checkout.php?product=${product}&id=${id}`;
-        }
+        // function goToCheckout(product, id){
+        //  console.log(product, id);
+        //  window.location.href = `checkout.php?product=${product}&id=${id}`;
+        // }
         document.addEventListener("DOMContentLoaded", function () {
             const swiperWrapper = document.getElementById("swiper-wrapper");
             const imageCount = 10; // Total number of images

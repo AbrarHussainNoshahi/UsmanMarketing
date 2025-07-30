@@ -274,7 +274,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
+session_start();
 
 $productData = [
     'canva' => [
@@ -322,6 +322,12 @@ $product_price = $matchedProduct['price'] ?? '';
 $countryError = "";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
+
+    $_SESSION['formData'] = $_POST;
+    $_SESSION['product_name'] = $product_name;
+    $_SESSION['product_price'] = $product_price;
+
+
     $email = $_POST['email'] ?? '';
     $country = $_POST['selection'] ?? '';
     $firstName = $_POST['FirstName'] ?? '';
@@ -342,42 +348,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
         $isValid = false;
     }
     if($isValid){
-        // Email addresses
-        // $adminEmail = "support@usmandigitalstore.com";
-        // $customerEmail = $email;
-        // $adminSubject = "New Order Received";
-        // $adminMessage = "
-        // <h2>New Order Details</h2>
-        // <p><strong>Product:</strong> $product_name</p>
-        // <p><strong>Price:</strong> $product_price</p>
-        // <p><strong>Email:</strong> $email</p>
-        // <p><strong>Name:</strong> $firstName $lastName</p>
-        // <p><strong>Address:</strong> $address $appartment, $city, $state, $zip, $country</p>
-        // <p><strong>Phone:</strong> $phone</p>
-        // ";
 
-        // // Email headers for HTML mail
-        // $headers = "MIME-Version: 1.0" . "\r\n";
-        // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        // $headers .= "From: Usman Digital Store <$adminEmail>" . "\r\n";
-
-        // // Send to Admin
-        // mail($adminEmail, $adminSubject, $adminMessage, $headers);
-
-        // // ----------- Send Email to Customer -----------
-        // $customerSubject = "Order Confirmation";
-        // $customerMessage = "
-        // <h2>Thank you for your order!</h2>
-        // <p>Hi $firstName,</p>
-        // <p>We've received your order for <strong>$product_name</strong> and are currently processing it.</p>
-        // <p>We’ll send you an update soon.</p>
-        // <br>
-        // <p>Thanks,</p>
-        // <p>Usman Digital Store</p>
-        // ";
-
-        // // Send to Customer
-        // mail($customerEmail, $customerSubject, $customerMessage, $headers);
+        header("Location: payfast_redirect.php");
+        exit;
+        
     $adminEmail = "support@usmandigitalstore.com";
     $subjectAdmin = "New Order: $product_name";
     $messageAdmin = "
@@ -628,7 +602,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
             <h2 class="kafla-headline">Checkout Your <span class="highlight playfair-display">Order </span>
             </h2>
             <div class="responsive-container-block big-container">
-                <form class="form-box" method="post" id="checkoutForm" action="./checkout.php">
+                <form class="form-box" method="post" id="checkoutForm" action="./payfast_redirect.php">
                      <input type="hidden" name="product" value="<?php echo htmlspecialchars($product); ?>">
                      <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                     <div class="responsive-container-block container">

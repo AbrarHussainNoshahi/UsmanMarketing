@@ -441,10 +441,11 @@
               <div class="feature-text">No device switching allowed</div>
             </div>
           </div>
-
-          <a>
-            <button class="cta-button starter" onclick="goToCheckout('surfshark', 1)" type="submit">GET LITE PLAN</button>
-          </a>
+          <form method="POST" action="./payfast.php">
+            <input type="hidden" name="plan" value="GET LITE PLAN">
+            <input type="hidden" name="amount" value="300">
+            <button class="cta-button starter" type="submit">GET LITE PLAN</button>
+          </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
 
@@ -503,10 +504,11 @@
               <div class="feature-text">No switching between devices</div>
             </div>
           </div>
-
-          <a>
-            <button class="cta-button pro" onclick="goToCheckout('surfshark', 2)" type="submit">GET 6 MONTHS PLAN</button>
-          </a>
+          <form method="POST" action="./payfast.php">
+            <input type="hidden" name="plan" value="GET 6 MONTHS PLAN">
+            <input type="hidden" name="amount" value="700">
+            <button class="cta-button starter" type="submit">GET 6 MONTHS PLAN</button>
+          </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
               <div class="swiper-slide">
@@ -565,10 +567,11 @@
               <div class="feature-text">100% control + premium support</div>
             </div>
           </div>
-
-          <a>
-            <button class="cta-button team" onclick="goToCheckout('surfshark', 3)" type="submit">GET PREMIUM ACCESS</button>
-          </a>
+          <form method="POST" action="./payfast.php">
+            <input type="hidden" name="plan" value="GET PREMIUM ACCESS">
+            <input type="hidden" name="amount" value="1500">
+            <button class="cta-button starter" type="submit">GET PREMIUM ACCESS</button>
+          </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
               <div class="swiper-slide">
@@ -783,10 +786,10 @@
   <script src="script/vslcontainer%20-%20Copy.js"></script>
   <script src="./script/swiper-bundle.min.js"></script>
   <script>
-    function goToCheckout(product, id){
-      console.log(product, id);
-      window.location.href = `checkout.php?product=${product}&id=${id}`;
-    }
+    // function goToCheckout(product, id){
+    //   console.log(product, id);
+    //   window.location.href = `checkout.php?product=${product}&id=${id}`;
+    // }
     document.addEventListener("DOMContentLoaded", function () {
       const swiperWrapper = document.getElementById("swiper-wrapper");
       const imageCount = 10; // Total number of images

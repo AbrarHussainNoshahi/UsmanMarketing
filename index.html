@@ -469,10 +469,11 @@
               <div class="feature-text">Team Plan Access</div>
             </div>
           </div>
-
-          <a>
-            <button class="cta-button starter" onclick="goToCheckout('canva', 1)">Buy Canva Pro Spark</button>
-          </a>
+          <form method="POST" action="./payfast.php">
+            <input type="hidden" name="plan" value="Canva Pro Spark">
+            <input type="hidden" name="amount" value="299">
+            <button class="cta-button starter" type="submit">Buy Canva Pro Spark</button>
+          </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
               <div class="swiper-slide">
@@ -537,10 +538,11 @@
               <div class="feature-text">Team Plan Access</div>
             </div>
           </div>
-
-          <a>
-            <button class="cta-button pro" onclick="goToCheckout('canva', 2)" type="submit">Buy Canva Pro Flow</button>
-          </a>
+            <form method="POST" action="./payfast.php">
+            <input type="hidden" name="plan" value="Canva Pro Flow">
+            <input type="hidden" name="amount" value="599">
+            <button class="cta-button starter" type="submit">Buy Canva Pro Flow</button>
+          </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
               <div class="swiper-slide">
@@ -607,10 +609,11 @@
               <div class="feature-text"> Priority support from our team</div>
             </div>
           </div>
-
-          <a>
-            <button class="cta-button team" onclick="goToCheckout('canva', 3)" type="submit">Buy Canva Pro Legacy</button>
-          </a>
+          <form method="POST" action="./payfast.php">
+            <input type="hidden" name="plan" value="Canva Pro Legacy">
+            <input type="hidden" name="amount" value="1299">
+            <button class="cta-button starter" type="submit">Buy Canva Pro Legacy</button>
+          </form>
           <div class="swiper testimonial_swiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
 
@@ -831,10 +834,10 @@
   <script src="./script/swiper-bundle.min.js"></script>
   <script>
 
-    function goToCheckout(product, id){
-      console.log(product, id);
-      window.location.href = `checkout.php?product=${product}&id=${id}`;
-    }
+    // function goToCheckout(product, id){
+    //   console.log(product, id);
+    //   window.location.href = `checkout.php?product=${product}&id=${id}`;
+    // }
     document.addEventListener("DOMContentLoaded", function () {
      
 

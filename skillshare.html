@@ -450,10 +450,11 @@
                             <div class="feature-text"> Changing device will void subscription</div>
                         </div>
                     </div>
-
-                    <a>
-                        <button class="cta-button starter" onclick="goToCheckout('skillshare', 1)" type="submit">GET SHARED ACCESS</button>
-                    </a>
+                    <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="GET SHARED ACCESS">
+                        <input type="hidden" name="amount" value="500">
+                        <button class="cta-button starter" type="submit">GET SHARED ACCESS</button>
+                    </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
 
@@ -521,10 +522,11 @@
                                 credentials</div>
                         </div>
                     </div>
-
-                    <a>
-                        <button class="cta-button pro" onclick="goToCheckout('skillshare', 2)" type="submit">GET PRIVATE PLAN</button>
-                    </a>
+                    <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="PRIVATE PLAN">
+                        <input type="hidden" name="amount" value="899">
+                        <button class="cta-button starter" type="submit">GET PRIVATE PLAN</button>
+                    </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
                             <div class="swiper-slide">
@@ -748,10 +750,10 @@
     <script src="script/vslcontainer%20-%20Copy.js"></script>
     <script src="./script/swiper-bundle.min.js"></script>
     <script>
-        function goToCheckout(product, id){
-          console.log(product, id);
-          window.location.href = `checkout.php?product=${product}&id=${id}`;
-        }
+        // function goToCheckout(product, id){
+        //   console.log(product, id);
+        //   window.location.href = `checkout.php?product=${product}&id=${id}`;
+        // }
         document.addEventListener("DOMContentLoaded", function () {
             const swiperWrapper = document.getElementById("swiper-wrapper");
             const imageCount = 10; // Total number of images

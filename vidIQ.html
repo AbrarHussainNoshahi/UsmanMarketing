@@ -452,10 +452,11 @@
                                 subscription.</div>
                         </div>
                     </div>
-
-                    <a>
-                        <button class="cta-button starter" onclick="goToCheckout('vidiq', 1)" type="submit">GET BOOST PLAN</button>
-                    </a>
+                    <form method="POST" action="./payfast.php">
+                        <input type="hidden" name="plan" value="GET BOOST PLAN">
+                        <input type="hidden" name="amount" value="800">
+                        <button class="cta-button starter" type="submit">GET BOOST PLAN</button>
+                    </form>
                     <div class="swiper testimonial_swiper">
                         <div class="swiper-wrapper" id="swiper-wrapper">
 
@@ -666,10 +667,10 @@
     <script src="script/vslcontainer%20-%20Copy.js"></script>
     <script src="./script/swiper-bundle.min.js"></script>
     <script>
-        function goToCheckout(product, id){
-         console.log(product, id);
-         window.location.href = `checkout.php?product=${product}&id=${id}`;
-        }
+        // function goToCheckout(product, id){
+        //  console.log(product, id);
+        //  window.location.href = `checkout.php?product=${product}&id=${id}`;
+        // }
         document.addEventListener("DOMContentLoaded", function () {
             const swiperWrapper = document.getElementById("swiper-wrapper");
             const imageCount = 10; // Total number of images

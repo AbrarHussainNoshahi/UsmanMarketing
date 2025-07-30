@@ -235,15 +235,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </ul>
                 </nav>
             </div>
-            <div class="button-row">
-                <!-- Neon Button -->
+            <!-- <div class="button-row">
                 <div class="button-container">
                     <button onclick="location.href='#pricing'" class="btn header-button">
                         <div class="particles"></div>
                         <span><a href="#pricing">BUY NOW</a></span>
                     </button>
                 </div>
-            </div>
+            </div> -->
 
         </header>
 
